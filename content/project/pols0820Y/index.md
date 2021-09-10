@@ -1,9 +1,9 @@
 ---
 title: POLS 0820Y
-summary: The Politics of Race and the Criminal Justice System (Freshman Seminar)
+summary: The Politics of Race and the Criminal Justice System (First-year seminar)
 tags:
 - undergrad
-date: "2021-06-01T00:00:00Z"
+date: "2021-09-01T00:00:00Z"
 
 # Optional external URL for project (replaces project detail page).
 external_link: ""
