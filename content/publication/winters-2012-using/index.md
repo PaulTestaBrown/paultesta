@@ -38,7 +38,7 @@ featured: false
 # - name: Custom Link
 #   url: http://example.org
 
-url_pdf: https://www.liebertpub.com/doi/abs/10.1089/crispr.2020.0049
+url_pdf: 2012_NEARC_Winters_Testa_Fredrickson.pdf
 # url_code: ''
 # url_dataset: ''
 # url_poster: ''
