@@ -42,4 +42,3 @@ title: Paul Testa
 
 Paul Testa is an Assistant Professor of Political Science at Brown University.  His work examines how interactions with institutions of criminal justice shape political behavior and how citizens more broadly form opinions about what is just and fair. He has published in the American Journal of Political Science, the Journal of Politics, and Political Research Quarterly. He teaches courses in applied quantitative research at the graduate  and undergraduate level. He is a fellow with The Policy Lab at Brown University where he helps integrate insights from behavioral science to the design, implementation, and evaluation of public policies, and an affiliate with Taubman Center for American Politics where he is a member of the Center's Poll Advisory Board.
 
-{{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/cv/PaulTesta_CV_Summer2021.pdf" "newtab" >}}CV{{< /staticref >}}.
