@@ -9,4 +9,4 @@ node_modules/
 
 # R
 .Rproj.user
-*/.DS_Store
+.DS_Store
