@@ -371,3 +371,35 @@ class: inverse, center, middle
 
 
 
+
+```{r}
+df <- read_csv("data/election-forecasts-2022/house_district_toplines_2022.csv")
+
+range(df$forecastdate)
+
+df %>%
+  filter(forecastdate == "9/9/22") -> tmp
+
+table(tmp$expression)
+
+tmp %>%
+  filter(expression != "_classic") -> tmp
+tmp$winner_Dparty
+tmp %>%
+  select(expression, district,voteshare_mean_D1) %>%
+  pivot_wider(
+    id_cols = c(district),
+    names_from = expression,
+    values_from = voteshare_mean_D1,
+  )%>%
+  mutate(
+    diff = `_lite` - `_deluxe`
+  ) %>%
+  filter(`_lite` > 50, `_deluxe` <= 50)%>%
+  arrange(desc(diff))
+
+
+tmp$voteshare_mean_D1
+```
+
+
