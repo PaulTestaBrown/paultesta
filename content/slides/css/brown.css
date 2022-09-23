@@ -1,5 +1,5 @@
 /*
-Brown-themed CSS for xaringan slides 
+Brown-themed CSS for xaringan slides
 Author: Paul Testa
 Updated: 2018-03-22
 */
@@ -24,12 +24,12 @@ a, a > code {
   color: #3498CC;
 }
 
-.remark-inline-code { 
+.remark-inline-code {
   color: #3498CC;
 }
 
-.remark-code-line-highlighted { 
-  background-color: rgba(052, 152, 204, 0.4); 
+.remark-code-line-highlighted {
+  background-color: rgba(052, 152, 204, 0.4);
 }
 
 .inverse {
@@ -110,14 +110,14 @@ thead, tfoot, tr:nth-child(even) { background: #eee }
   font-family: 'Crimson Pro';
 }
 
-.inverse .remark-inline-code { 
+.inverse .remark-inline-code {
   color: white;
 }
 
 .title-slide h1 {
   color: #4E2A1E;
   padding-top: 250px;
-  font-size: 50px;
+  font-size: 40px;
   line-height: 0.05;
   text-align: left;
   padding-bottom: 18px;
@@ -128,7 +128,7 @@ thead, tfoot, tr:nth-child(even) { background: #eee }
 
 .title-slide h2 {
   color: #A42820;
-  font-size: 35px;
+  font-size: 30px;
   text-align: left;
   padding-top: 0px;
   margin-top: 0px;
