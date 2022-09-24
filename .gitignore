@@ -5,5 +5,12 @@
 public/
 jsconfig.json
 node_modules/
+
+# R
 .Rproj.user
+
 .Rhistory
+
+.DS_Store
+
+/content/slides/data/

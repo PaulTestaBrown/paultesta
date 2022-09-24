@@ -1,0 +1,405 @@
+---
+title: "Polling the 2022 U.S. Midterm Elections"
+date: "September 26, 2022"
+author: "Paul Testa"
+output:
+  xaringan::moon_reader:
+    css: ["default", "css/brown.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: atelier-lakeside-light
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, 
+  comment = NA, dpi = 300,
+  fig.align = "center", out.width = "80%", cache = FALSE)
+library("tidyverse")
+```
+
+```{r xaringan-tile-view, echo=FALSE}
+xaringanExtra::use_tile_view()
+```
+
+```{r xaringanExtra-clipboard, echo=FALSE}
+htmltools::tagList(
+  xaringanExtra::use_clipboard(
+    button_text = "<i class=\"fa fa-clipboard\"></i>",
+    success_text = "<i class=\"fa fa-check\" style=\"color: #90BE6D\"></i>",
+  ),
+  rmarkdown::html_dependency_font_awesome()
+)
+```
+
+
+
+```{r packages, include=F}
+the_packages <- c(
+  ## R Markdown
+  "kableExtra","DT","texreg",
+  ## Tidyverse
+  "tidyverse", "lubridate", "forcats", "haven", "labelled",
+  ## Extensions for ggplot
+  "ggmap","ggrepel", "ggridges", "ggthemes", "ggpubr", 
+  "GGally", "scales", "dagitty", "ggdag", "ggforce",
+  # Graphics:
+  "scatterplot3d", #<<
+  # Data 
+  "COVID19","maps","mapdata","qss","tidycensus", "dataverse", 
+  # Analysis
+  "DeclareDesign", "easystats", "zoo"
+)
+```
+
+```{r ipak, include=F}
+ipak <- function(pkg){
+    new.pkg <- pkg[!(pkg %in% installed.packages()[, "Package"])]
+    if (length(new.pkg)) 
+        install.packages(new.pkg, dependencies = TRUE)
+    sapply(pkg, require, character.only = TRUE)
+}
+
+```
+
+
+```{r loadpackages, cache=F, include=F}
+ipak(the_packages)
+```
+
+class: inverse, center, bottom
+background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Dewey_Defeats_Truman.jpg/1200px-Dewey_Defeats_Truman.jpg")
+background-size: fill
+
+# Will the polls get it right this time?
+
+
+---
+## Will the polls get it right this time?
+
+- What does it mean for the polls to get it right?
+
+--
+
+  - Popular vote
+  - Specific races
+  - Control of the House, Senate, and Governorships
+  - Size of Majority
+
+- Why might the polls be wrong?
+
+--
+
+  - How have polls faired in the past?
+
+--
+
+- How will we know?
+
+--
+
+  - What should we look for on election night?
+  - What should we look for in hindshight
+  - What can we learn for 2024
+
+
+---
+## Overview
+
+- Polls: What are they good for?
+  - What is a poll
+  - How do polls work
+  - How are polls used to forecast elections
+  - What can go wrong?
+
+--
+  
+- Polls: What have they done for me lately
+  - Polling forecasts of 2016, 2018, 2020
+  - 2022 special elections and primaries
+
+--
+
+- Polls: What will they think of next?
+  - Why the polls might right
+  - Why the polls might be wrong
+  - What to look for on election night
+
+--
+  
+- Polls: Choose your own adventure
+  - Will *X* matter?
+
+--
+
+But first...
+
+---
+background-image: url("https://media.giphy.com/media/3oEhmKbZHGUUGQckgM/giphy.gif")
+
+---
+# What do you think about the 2022 Midterms:
+
+.pull-left[
+A quick survey:
+
+- <https://paultesta.org/slides/midterms2022>
+
+- <https://bit.ly/taubman22>
+]
+
+.pull-right[
+
+![](images/bit.ly_taubman22.png)
+
+]
+
+
+
+---
+
+<iframe src="https://paul-testa.shinyapps.io/midterms_survey/" style="border: 1px solid #AAA; width: 500px; height: 600px"></iframe>
+
+
+
+
+
+
+
+---
+class: inverse, center, middle
+# 💡
+# Polls: What are they good for
+
+---
+## What is a poll
+
+- A poll is a survey (structured interview) conducted on a sample of respondents from a population of interest
+  
+  - "If the Democratic Primary for Governor was being held today and the candidates were Matt Brown, Helena Foulkes, Nellie Gorbea, Dan McKee, and Luis Daniel Muñoz, for whom would you vote, Brown, Foulkes, Gorbea, McKee, or Muñoz?" 
+
+- Use data from our sample to learn about a larger population
+
+  - "A recent survey of 405 likely voters found..."
+
+
+
+---
+## How do polls work: An Example from Rhode Island
+
+![](images/mckee.png)
+---
+
+<iframe title="Democratic Primary for RI Governor (August 2022)" aria-label="Split Bars" id="datawrapper-chart-65b9Y" src="https://datawrapper.dwcdn.net/65b9Y/5/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="685"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();</script>
+
+---
+
+![](https://datawrapper.dwcdn.net/65b9Y/)
+
+---
+## Key Componets of a Poll
+
+- Type of sample
+
+- Survey mode
+
+- Sampling procedure
+
+- Sample size
+
+- Response rate
+
+
+
+
+
+
+
+
+---
+## How do polls work
+
+Who will win the democratic nomination for the Governor of RI
+
+
+```{r, eval=F}
+p <- .5
+n <- 500
+1.96 * sqrt((p*(1-p))/n)
+
+p <- .35
+n <- 405
+1.96 * sqrt((p*(1-p))/n)
+
+.28*.21+.28
+
+.28/.79
+.25/.63
+library(tidyverse)
+sim_elect <- function(){mean(rbinom(405,1,.35))}
+replicate(100,sim_elect())
+df_ri <- data.frame(
+  n = 1:1000,
+  mckee = replicate(00,sim_elect())
+) %>%
+  mutate(
+    ul = mckee + 1.96 * sd(mckee),
+    ll = mckee - 1.96 * sd(mckee)
+  )
+df_ri %>%
+  slice(1:200)%>%
+  ggplot(aes(mckee))+
+  geom_dotplot(method = "histodot")+
+  stat_function(fun = dnorm, n = 405, args = list(mean = .35, sd = 0.02370081))
+
+
+df_ri %>%
+  slice(1:1000)%>%
+  ggplot(aes(mckee))+
+  geom_histogram(aes(y =..density..))+
+    stat_function(fun = dnorm, n = 405, args = list(mean = .35, sd = 0.02370081))
+
+  
+   scale_y_continuous(NULL, breaks = NULL)
+
+
+```
+
+
+
+---
+## RI Primary Poll
+
+
+---
+## The Results
+
+```{r}
+1.96*sqrt((.28*(1-.28))/405)
+sqrt(((.28 + .25) - (.28 -.25)^2)/405)*1.96
+```
+
+
+
+
+
+---
+## How to evaluate the quality of a poll
+
+- How was the poll conducted
+
+- Who conducted the poll
+
+- How was the poll conducted
+
+- How people we contacted
+
+- How were res
+
+---
+class: inverse, center, middle
+# 💡
+# Polls: What have they done for us lately
+
+---
+## Polling 2016
+
+
+- Largely *correct* in the average
+
+- Consistently wrong where it mattered
+
+  - Over stated Clinton's lead, and understated Trump's support in key states
+  
+- Why
+
+  - Whites with no-college degree underrepresented
+  
+  - High number of undecideds (10-15%) broke for Trump by double digits
+
+
+---
+## Polling 2018
+
+- A (shortlived) reprieve...
+
+---
+## Polling 2020
+
+- Similar pattern of errors
+
+- Things that don't explain the miss
+
+  - Undecideds
+  
+  - Shy Trump voters
+
+  - Education
+  
+  - Other demographic factors
+
+
+
+
+---
+## So what does explain the miss
+
+- Unit non-response
+
+  - Between parties
+  
+  - Within parties
+  
+  - Among new and independent voters
+
+
+- Dramatically different environment
+  
+  - Vote by mail
+  - High turnout
+  - New voters
+  
+---
+class: inverse, center, middle
+# 💡
+# Polls: What will they think of next
+
+---
+## What does this all mean for the 2022 Midterms
+
+
+
+
+```{r}
+df <- read_csv("data/election-forecasts-2022/house_district_toplines_2022.csv")
+
+range(df$forecastdate)
+
+df %>%
+  filter(forecastdate == "9/9/22") -> tmp
+
+table(tmp$expression)
+
+tmp %>%
+  filter(expression != "_classic") -> tmp
+tmp$winner_Dparty
+tmp %>%
+  select(expression, district,voteshare_mean_D1) %>%
+  pivot_wider(
+    id_cols = c(district),
+    names_from = expression,
+    values_from = voteshare_mean_D1,
+  )%>%
+  mutate(
+    diff = `_lite` - `_deluxe`
+  ) %>%
+  filter(`_lite` > 50, `_deluxe` <= 50)%>%
+  arrange(desc(diff))
+
+
+tmp$voteshare_mean_D1
+```
+
+

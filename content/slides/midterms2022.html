@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Polling the 2022 U.S. Midterm Elections</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Paul Testa" />
+    <meta name="date" content="2022-09-26" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <script src="libs/clipboard/clipboard.min.js"></script>
+    <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"<i class=\"fa fa-clipboard\"><\/i>","success":"<i class=\"fa fa-check\" style=\"color: #90BE6D\"><\/i>","error":"Press Ctrl+C to Copy"})</script>
+    <link href="libs/font-awesome/css/all.css" rel="stylesheet" />
+    <link href="libs/font-awesome/css/v4-shims.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/brown.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Polling the 2022 U.S. Midterm Elections
+]
+.author[
+### Paul Testa
+]
+.date[
+### September 26, 2022
+]
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class: inverse, center, bottom
+background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Dewey_Defeats_Truman.jpg/1200px-Dewey_Defeats_Truman.jpg")
+background-size: fill
+
+# Will the polls get it right this time?
+
+
+---
+## Will the polls get it right this time?
+
+- What does it mean for the polls to get it right?
+
+--
+
+  - Popular vote
+  - Specific races
+  - Control of the House, Senate, and Governorships
+  - Size of Majority
+
+- Why might the polls be wrong?
+
+--
+
+  - How have polls faired in the past?
+
+--
+
+- How will we know?
+
+--
+
+  - What should we look for on election night?
+  - What should we look for in hindshight
+  - What can we learn for 2024
+
+
+---
+## Overview
+
+- Polls: What are they good for?
+  - What is a poll
+  - How do polls work
+  - How are polls used to forecast elections
+  - What can go wrong?
+
+--
+  
+- Polls: What have they done for me lately
+  - Polling forecasts of 2016, 2018, 2020
+  - 2022 special elections and primaries
+
+--
+
+- Polls: What will they think of next?
+  - Why the polls might right
+  - Why the polls might be wrong
+  - What to look for on election night
+
+--
+  
+- Polls: Choose your own adventure
+  - Will *X* matter?
+
+--
+
+But first...
+
+---
+background-image: url("https://media.giphy.com/media/3oEhmKbZHGUUGQckgM/giphy.gif")
+
+---
+# What do you think about the 2022 Midterms:
+
+.pull-left[
+A quick survey:
+
+- &lt;https://paultesta.org/slides/midterms2022&gt;
+
+- &lt;https://bit.ly/taubman22&gt;
+]
+
+.pull-right[
+
+![](images/bit.ly_taubman22.png)
+
+]
+
+
+
+---
+
+&lt;iframe src="https://paul-testa.shinyapps.io/midterms_survey/" style="border: 1px solid #AAA; width: 500px; height: 600px"&gt;&lt;/iframe&gt;
+
+
+
+
+
+
+
+---
+class: inverse, center, middle
+# 💡
+# Polls: What are they good for
+
+---
+## What is a poll
+
+- A poll is a survey (structured interview) conducted on a sample of respondents from a population of interest
+  
+  - "If the election were held today, would you vote for"
+
+- Use data from our sample to learn about a larger population
+
+  - "A recent survey of 405 likely voters found..."
+
+---
+## How do polls work: An Example from Rhode Island
+
+![](images/mckee.png)
+---
+
+&lt;iframe title="Democratic Primary for RI Governor (August 2022)" aria-label="Split Bars" id="datawrapper-chart-65b9Y" src="https://datawrapper.dwcdn.net/65b9Y/5/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="685"&gt;&lt;/iframe&gt;&lt;script type="text/javascript"&gt;!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r&lt;t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();&lt;/script&gt;
+
+---
+---
+## Key Componets of a Poll
+
+- Type of sample
+
+- Survey mode
+
+- Sampling procedure
+
+- Sample size
+
+- Response rate
+
+
+
+
+
+
+
+
+---
+## How do polls work
+
+Who will win the democratic nomination for the Governor of RI
+
+
+
+```r
+p &lt;- .5
+n &lt;- 500
+1.96 * sqrt((p*(1-p))/n)
+
+p &lt;- .35
+n &lt;- 405
+1.96 * sqrt((p*(1-p))/n)
+
+.28*.21+.28
+
+.28/.79
+.25/.63
+library(tidyverse)
+sim_elect &lt;- function(){mean(rbinom(405,1,.35))}
+replicate(100,sim_elect())
+df_ri &lt;- data.frame(
+  n = 1:1000,
+  mckee = replicate(00,sim_elect())
+) %&gt;%
+  mutate(
+    ul = mckee + 1.96 * sd(mckee),
+    ll = mckee - 1.96 * sd(mckee)
+  )
+df_ri %&gt;%
+  slice(1:200)%&gt;%
+  ggplot(aes(mckee))+
+  geom_dotplot(method = "histodot")+
+  stat_function(fun = dnorm, n = 405, args = list(mean = .35, sd = 0.02370081))
+
+
+df_ri %&gt;%
+  slice(1:1000)%&gt;%
+  ggplot(aes(mckee))+
+  geom_histogram(aes(y =..density..))+
+    stat_function(fun = dnorm, n = 405, args = list(mean = .35, sd = 0.02370081))
+
+  
+   scale_y_continuous(NULL, breaks = NULL)
+```
+
+
+
+---
+## RI Primary Poll
+
+
+---
+## The Results
+
+
+
+
+
+---
+## How to evaluate the quality of a poll
+
+- How was the poll conducted
+
+- Who conducted the poll
+
+- How was the poll conducted
+
+- How people we contacted
+
+- How were res
+
+---
+class: inverse, center, middle
+# 💡
+# Polls: What have they done for us lately
+
+---
+## Polling 2016
+
+---
+## Polling 2018
+
+---
+## Polling 2020
+
+
+
+---
+class: inverse, center, middle
+# 💡
+# Polls: What will they think of next
+
+---
+## How will polls perform in the 2022 Midterm Elections
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "atelier-lakeside-light",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
