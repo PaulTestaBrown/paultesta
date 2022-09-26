@@ -77,62 +77,43 @@ background-size: fill
 
 
 ---
-## Will the polls get it right this time?
+## Why do we care?
 
-- What does it mean for the polls to get it right?
-
---
-
-  - Popular vote
-  - Specific races
-  - Control of the House, Senate, and Governorships
-  - Size of Majority
-
-- Why might the polls be wrong?
+- Elections have consequences
 
 --
 
-  - How have polls faired in the past?
+- Election polling has consequences
 
+  - Campaigns
+  
+  - Media
+  
+  - Voters
+  
 --
 
-- How will we know?
+- It matters whether the polls get it right
 
---
 
-  - What should we look for on election night?
-  - What should we look for in hindshight
-  - What can we learn for 2024
+
+
+
 
 
 ---
-## Overview
+## Will the polls get it right it 2022?
 
-- Polls: What are they good for?
-  - What is a poll
-  - How do polls work
-  - How are polls used to forecast elections
-  - What can go wrong?
+To answer this question, we ask the following about polls:
 
---
-  
-- Polls: What have they done for me lately
-  - Polling forecasts of 2016, 2018, 2020
-  - 2022 special elections and primaries
+- How do they work?
 
---
+- How do we use them to forecast an election?
 
-- Polls: What will they think of next?
-  - Why the polls might right
-  - Why the polls might be wrong
-  - What to look for on election night
+- How have they done in the past?
 
---
-  
-- Polls: Choose your own adventure
-  - Will *X* matter?
+- How will they do in the future?
 
---
 
 But first...
 
@@ -140,7 +121,7 @@ But first...
 background-image: url("https://media.giphy.com/media/3oEhmKbZHGUUGQckgM/giphy.gif")
 
 ---
-# What do you think about the 2022 Midterms:
+# What do you think will happen in the 2022 Midterm Elections:
 
 .pull-left[
 A quick survey:
@@ -171,235 +152,478 @@ A quick survey:
 ---
 class: inverse, center, middle
 # 💡
-# Polls: What are they good for
+# Polls: How do they work?
 
 ---
-## What is a poll
+## Polling
 
-- A poll is a survey (structured interview) conducted on a sample of respondents from a population of interest
+- A poll is a survey conducted on sample from a population
+
+- The theory of polling depends on the power of **random sampling**
+
+- The practice of polling tries to account and adjust for **all the ways a poll can fall short** of this theoretical ideal
+
+
+---
+## Polling Elections
+
+- **Pollster:** Who's doing the survey
+
+--
+
+- **Sampling frame:** A list from which the sample was drawn
+
+--
+
+- **Sample size:** How many people were surveyed
+
+--
+
+- **Survey mode:** How the survey was conducted
+
+--
+
+- **Survey instrument:** What the survey asked
+
+--
+
+- **Survey weights:** Adjustments to make the survey more representative of the population
+
+--
+
+- **Likely voter model:** A way of distinguishing (likely) voters from non-voters
+
+--
+
+- **Margin of error:** A range of plausible values for the true population value
+
+---
+
+![](images/weight1.png)
+
+
+.pull-left[
+![](images/weight2.png)
+
+]
+
+.pull-right[
+![](images/weight3.png)
+]
+
+[New York Times](https://www.nytimes.com/interactive/2016/09/20/upshot/the-error-the-polling-world-rarely-talks-about.html)
+
+---
+## The Challenge of Election Polling
+
+.pull-left[
+
+- The population is unknown
+
+- Response rates are low
+
+- Response rates differ
+
+- Adjustments are imperfect
+
+]
+
+.pull-right[
+
+![](https://www.pewresearch.org/wp-content/uploads/2019/02/FT_19.02.27_ATP1_Afterbriefplateau_2.png?resize=420,492)
+
+[Pew](https://www.pewresearch.org/fact-tank/2019/02/27/response-rates-in-telephone-surveys-have-resumed-their-decline/)
+]
+
+
+---
+## Error and Bias
+
+![]("https://miro.medium.com/proxy/1*k_D4-U7c3Tf8hJRpaOZoBQ.png")
+
+
+[Source](https://medium.com/@akgone38/what-the-heck-bias-variance-tradeoff-is-fe4681c0e71b)
+
+---
+## Polling Error
+
+Total Survey Error in Election polling is a function of:
+
+- Sampling Error
+
+- Temporal Error
+
+- Non-Sampling Error
+
+---
+## Polling Error
+
+Total Survey Error (how far off a poll's estimate is from the truth) can be broken down into different parts:
+
+- **Sampling Error:**
+  - That error that arises from sampling from a population
   
-  - "If the Democratic Primary for Governor was being held today and the candidates were Matt Brown, Helena Foulkes, Nellie Gorbea, Dan McKee, and Luis Daniel Muñoz, for whom would you vote, Brown, Foulkes, Gorbea, McKee, or Muñoz?" 
+  - Sample Size $\uparrow$ $\to$ Sampling error $\downarrow$
+  
+  - Margins of error typically only reflect sampling error
 
-- Use data from our sample to learn about a larger population
+---
+## Polling Error
 
-  - "A recent survey of 405 likely voters found..."
+Total Survey Error (how far off a poll's estimate is from the truth) can be broken down into different parts:
+
+- Sampling Error:
+
+- **Temporal Error:**
+
+  - The error that comes from polling a dynamic race at specific point in time
+  
+  - Polls closer to the election $\to$ Temporal Error $\downarrow$
+
+
+---
+## Polling Error
+
+Total Survey Error (how far off a poll's estimate is from the truth) can be broken down into different parts:
+
+- Sampling Error:
+
+- Temporal Error:
+
+- **Non-sampling Error:**
+  - Errors that arise from how a poll is implemented and analyzed
+    - Coverage error: Sampling Frame $\neq$ Population
+    - Response bias: Some people are more less likely to take a poll
+    - Measurement bias: Question wording, order, can influence responses
+    - Processing and adjustment error: Failing to weight for key demographics
 
 
 
 ---
-## How do polls work: An Example from Rhode Island
+## Election Polling: Example
 
-![](images/mckee.png)
 ---
 
 <iframe title="Democratic Primary for RI Governor (August 2022)" aria-label="Split Bars" id="datawrapper-chart-65b9Y" src="https://datawrapper.dwcdn.net/65b9Y/5/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="685"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();</script>
 
 ---
+## 12 News/Roger Williams University Poll – August 2022
 
-![](https://datawrapper.dwcdn.net/65b9Y/)
+- **Pollster:** Fleming & Associates
+- **Sampling frame:** Probability Sample of Registered Voters
+- **Sample size:** 405
+- **Survey mode:** Live Caller with land and cell phone
+- Survey Instrument: See cross tabs of the questions here [Questions](https://www.wpri.com/democratic-primary-poll-results-august/)
+- **Survey weights:** None that I can tell
+- **Likely Voter Model:** Hard to say, but based on past surveys probably two-part screener:
+  - Are you registered to vote?
+  - How likely are you to vote in the Democratic Primary?
+- **Margin of Error:**
 
+$$
+\begin{align}
+MoE &= \pm 4.9 \\
+    &= 1.96 *\sqrt{((p*(1-p))/405)}\\
+    &= 1.96 *\sqrt{((0.5*(1-0.5))/405)}\\
+    &= \pm 4.869659
+\end{align}
+$$
 ---
-## Key Componets of a Poll
+## Evaluating a poll
 
-- Type of sample
+.pull-left[
+Two criteria
 
-- Survey mode
+- Did they call the race correctly?
+  - Yes! McKee won
 
-- Sampling procedure
-
-- Sample size
-
-- Response rate
-
-
-
-
-
-
-
-
----
-## How do polls work
-
-Who will win the democratic nomination for the Governor of RI
-
-
-```{r, eval=F}
-p <- .5
-n <- 500
-1.96 * sqrt((p*(1-p))/n)
-
-p <- .35
-n <- 405
-1.96 * sqrt((p*(1-p))/n)
-
-.28*.21+.28
-
-.28/.79
-.25/.63
-library(tidyverse)
-sim_elect <- function(){mean(rbinom(405,1,.35))}
-replicate(100,sim_elect())
-df_ri <- data.frame(
-  n = 1:1000,
-  mckee = replicate(00,sim_elect())
-) %>%
-  mutate(
-    ul = mckee + 1.96 * sd(mckee),
-    ll = mckee - 1.96 * sd(mckee)
-  )
-df_ri %>%
-  slice(1:200)%>%
-  ggplot(aes(mckee))+
-  geom_dotplot(method = "histodot")+
-  stat_function(fun = dnorm, n = 405, args = list(mean = .35, sd = 0.02370081))
-
-
-df_ri %>%
-  slice(1:1000)%>%
-  ggplot(aes(mckee))+
-  geom_histogram(aes(y =..density..))+
-    stat_function(fun = dnorm, n = 405, args = list(mean = .35, sd = 0.02370081))
-
-  
-   scale_y_continuous(NULL, breaks = NULL)
-
-
-```
-
-
-
----
-## RI Primary Poll
-
-
----
-## The Results
-
-```{r}
-1.96*sqrt((.28*(1-.28))/405)
-sqrt(((.28 + .25) - (.28 -.25)^2)/405)*1.96
-```
-
-
-
-
-
----
-## How to evaluate the quality of a poll
-
-- How was the poll conducted
-
-- Who conducted the poll
-
-- How was the poll conducted
-
-- How people we contacted
-
-- How were res
+- Did they get the margin right?
+  - Not exactly...
+  - McKee one by about 3% percentage points over Foulkes, not Gorbea
+]
+.pull-right[
+![](images/mckee.png)
+]
 
 ---
 class: inverse, center, middle
 # 💡
-# Polls: What have they done for us lately
+# Polls: How do we use them to forecast an election?
 
 ---
-## Polling 2016
+## Forecasting Elections
 
+- Election forecasts reflect varying combinations of:
 
-- Largely *correct* in the average
+  - Expert Opinion
+  - Fundamentals
+  - Polling
 
-- Consistently wrong where it mattered
+- Forecasts differ in the extent to which they rely on these components and how they integrate them in their final predictions
 
-  - Over stated Clinton's lead, and understated Trump's support in key states
+---
+## FiveThirtyEight's Approach to Forecasting
+
+![](images/forecast538.png)
+
+---
+## Forecasting Elections
+
+- The preeminence of polling in modern forecasts reflects the success of Nate Silver and FiveThirtyEight in correctly predicting the 2008 (49/50 states) 2012 (50/50) presidential elections 
   
-- Why
-
-  - Whites with no-college degree underrepresented
+  - Any one poll is likely to deviate from the true outcome
   
-  - High number of undecideds (10-15%) broke for Trump by double digits
+  - Averaging over multiple polls $\to$ more accurate predictions than any one poll, provided...
+
+  - the polls aren't **systematically** biased
+
+- The present concerns over polling the failure of such approaches to predict 
+  
+  - Trump's Victory in 2016
+  
+  - Strength of Trumps Support in 2020
+
+  
+---
+class: inverse, center, middle
+# 💡
+# Polls: How have they done in the past?
+
 
 
 ---
-## Polling 2018
+class: inverse, top, middle
+background-image: url("https://media.giphy.com/media/EZRgasxEGmtN6nycsB/giphy.gif")
+background-size: fill
+## Polling the 2016 Elections
 
-- A (shortlived) reprieve...
+  
+---
+## Polling the 2016 Election:
+
+- The polls missed bigly
+--
+  - National polls were reasonably accurate (Clinton wins Popular Vote)
+  - State polls overstated Clinton's lead / understated Trump support
+
+
+![](images/nyt2016.png)
+
+[New York Times](https://www.nytimes.com/interactive/2016/11/13/upshot/putting-the-polling-miss-of-2016-in-perspective.html)
 
 ---
-## Polling 2020
+## How did we get it so wrong in 2016?
 
-- Similar pattern of errors
+![](images/forrecast2016.png)
+Some likely explanations
 
-- Things that don't explain the miss
+- Likely voter models overstated Clinton's support
 
-  - Undecideds
-  
-  - Shy Trump voters
+- Large number of undecided voters broke decisively for Trump
 
-  - Education
-  
-  - Other demographic factors
+- White voters without a college underrepresented in pre-election surveys
 
+A full autopsy from [AAPOR](https://www.aapor.org/Education-Resources/Reports/An-Evaluation-of-2016-Election-Polls-in-the-U-S.aspx)
+[Image](https://www.nytimes.com/interactive/2016/upshot/presidential-polls-forecast.html?_r=0#other-forecasts)
+---
 
+.pull-left[
+![](images/nyted1.png)
+]
+
+.pull-right[
+![](images/nyted2.png)
+]
+
+[New York Times](https://www.nytimes.com/2017/05/31/upshot/a-2016-review-why-key-state-polls-were-wrong-about-trump.html)
+
+---
+class: inverse, top, middle
+background-image: url("https://media.giphy.com/media/H4KYT0ZKOXIxWnULsk/giphy.gif")
+background-size: fill
+## Polling the 2018 Elections
 
 
 ---
-## So what does explain the miss
+## 2018: A brief repreive?
 
+- Polls did a better job
+  - Most state polls weighted by education
+  - Underestimated Dems in House and Gubernatorial race
+  - No Partisan Bias in Senate Races
+- Forecasts correctly call:
+  - Democratic House
+  - Republican Senate
+
+However...
+
+---
+
+![](images/vox.png)
+
+[Vox](https://www.vox.com/2022/9/23/23353634/polls-bias-democrats-midterms)
+
+---
+class: inverse, top, middle
+## Polling the 2020 Elections
+
+background-image:url("https://media.giphy.com/media/26FmQ3zBr4i0SqR0s/giphy.gif")
+background-size:cover
+
+---
+## 2020: Historic Problems, Unclear Solutions
+
+- Average polling errors for national popular vote were 4.5 percentage points -- **highest in 40 years**
+
+- Polls overstated Biden's support by 3.9 points national polls (4.3 points in state polls)
+
+- Polls overstated Democratic support in Senate and Guberatorial races by about 6 points
+
+- [Forecasts predicted](https://projects.fivethirtyeight.com/2020-election-forecast/senate/ Democrats would hold 
+
+  - 48-55 seats in the Senate (actual: 50)
+  - 225-254 seats in the House (actual: 222)
+
+---
+## 2020: What when wrong
+
+- Unlike, 2016, currently no clear explanation for why the polls missed
+
+.pull-left[
+
+**Not a cause:**
+
+- Undecided voters
+- Failing to weight for education
+- Other demographic imbalances
+- "Shy Trump Voters"
+- Polling Early vs Election day voters
+
+]
+
+--
+.pull-right[
+**Potential Explanations**
+
+- Covid-19
+  - Democrats more likely to take polls
 - Unit non-response
-
   - Between parties
-  
   - Within parties
-  
-  - Among new and independent voters
+  - Across new and unaffiliated voters
 
 
-- Dramatically different environment
-  
-  - Vote by mail
-  - High turnout
-  - New voters
-  
+]
+
+[AAPOR Report](https://www.aapor.org/Education-Resources/Reports/2020-Pre-Election-Polling-An-Evaluation-of-the-202.aspx)
 ---
 class: inverse, center, middle
 # 💡
-# Polls: What will they think of next
+# Polls: What will they think of next?
 
 ---
-## What does this all mean for the 2022 Midterms
+## How will the polls do 2022 Elections
+
+- What are the polls saying?
+
+--
+
+- Why they might be wrong
+
+--
+
+- Why they might be all right
+
+--
+
+- What do we think will influence the race more broadly
+
+--
+
+But first...
+
+---
+
+<iframe src="https://paul-testa.shinyapps.io/midterm_results/" style="border: 1px solid #AAA; width: 500px; height: 600px"></iframe>
 
 
+---
+## What are the Polls Saying
 
+![](images/genball.png)
 
-```{r}
-df <- read_csv("data/election-forecasts-2022/house_district_toplines_2022.csv")
+[FiveThirtyEight](https://projects.fivethirtyeight.com/polls/generic-ballot/)
+---
+## FiveThirtyEight 2022 Forecast
 
-range(df$forecastdate)
+![](images/forecast2022.png)
+[FiveThirtyEight](https://projects.fivethirtyeight.com/2022-election-forecast/)
 
-df %>%
-  filter(forecastdate == "9/9/22") -> tmp
+---
+## FiveThirtyEight 2022 Forecast
 
-table(tmp$expression)
+![](images/congress2022.png)
+[FiveThirtyEight](https://projects.fivethirtyeight.com/2022-election-forecast/)
 
-tmp %>%
-  filter(expression != "_classic") -> tmp
-tmp$winner_Dparty
-tmp %>%
-  select(expression, district,voteshare_mean_D1) %>%
-  pivot_wider(
-    id_cols = c(district),
-    names_from = expression,
-    values_from = voteshare_mean_D1,
-  )%>%
-  mutate(
-    diff = `_lite` - `_deluxe`
-  ) %>%
-  filter(`_lite` > 50, `_deluxe` <= 50)%>%
-  arrange(desc(diff))
+---
+## Why the polls might be wrong
 
+- After 2016, we had a reasonable idea of what went wrong, and how to fix it (e.g. weight for education)
 
-tmp$voteshare_mean_D1
-```
+- Lack a similar explanation for the polling errors of 2020.
 
+- [AAPOR Report](https://www.aapor.org/Education-Resources/Reports/2020-Pre-Election-Polling-An-Evaluation-of-the-202.aspx) lays out three scenarios going forward. Problems in 2020: 
+  - Persist in 2022 and beyond
+  
+  - Are Unique to Presidential Elections (Problem for 2024, but not 2022)
+  
+  - Unique to 2020/Covid/Trump (Not a prolbem )
+
+---
+## Why the polls might be wrong
+
+.pull-left[
+![](images/vox.png)
+[Vox](https://www.vox.com/2022/9/23/23353634/polls-bias-democrats-midterms)
+]
+
+.pull-right[
+![](images/cohn.png)
+[New York Times](https://www.nytimes.com/2022/09/12/upshot/polling-midterms-warning.html)
+]
+
+---
+## Why the polls might be all right
+
+Nate Silver makes the [counterargument](https://www.vox.com/2022/9/23/23353634/polls-bias-democrats-midterms)
+
+.pull-left[
+
+1. No historic bias
+2. Pollsters incentives 
+3. Forecasters update
+4. No Trump
+5. Accurate Special Elections
+6. 2020 was unique
+7. Small sample of elections.
+]
+
+.pull-right[
+![](images/bias.png)
+]
+
+---
+## Should we trust the polls to get it right this time?
+
+--
+
+- Ask me November 10
+
+- Polling is hard, and getting harder
+  - Fundamental Nonresponse challenges seem real
+- Pollsters are innovative, and forecasts are flexible
+- What's the alternative
+  - Experts? 
+  - Fundamentals?
+- Will the polls get it right?
 
