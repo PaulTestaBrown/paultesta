@@ -155,12 +155,14 @@ class: middle, center
 
 --
 
-- Threat can mobilize action (among women), but threat + opportunity appears to be even more mobilizing
+- Threat can mobilize action (among women, demobilize among men?), but threat + opportunity appears to be even more mobilizing
 
 ---
 ## Comments
 
 Clever, clear design
+
+
 
 --
 
@@ -177,6 +179,7 @@ What's the mechanism?
 
 - Ways to further unpack socialization argument? 
   - Heterogeneous effects by age/generation
+  - What's up with men?
 
 - Mediation analyses of emotional response?
 
