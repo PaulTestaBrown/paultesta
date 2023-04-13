@@ -208,13 +208,20 @@ class: middle, center
 ---
 ## Summary
 
-- What explains non-participation
+- What explains non-participation in social protests
 
-- Analysis of survey data and structured interviews from Students in Hong Kong
+- Analysis of survey data and structured interviews from Students in Hong Kong in 2020
 
-- The dynamics of non-participation are distinct from participation
-  
-  - Lack of shared identities, informal networks, and growth of more hostile actions/framings -> non-participation
+- The dynamics of non-participation (non-conversion & erosion) are distinct from participation
+  - Structural barriers and deterrents
+  - Lack of movement identities, weak informal networks, and growth of more hostile actions/framings -> non-participation
+
+---
+
+```{r}
+knitr::include_graphics("images/p3.png")
+```
+
   
 ---
 ## Comments
@@ -234,6 +241,7 @@ class: middle, center
 
 - Movement support is not static but it's hard to capture these dynamics 
   - Possible to link responses from baseline March 2019 survey
+  - Non students?
 
 --
 
@@ -252,6 +260,7 @@ class: middle, center
 --
 
 - What's the equilibirium? How should movement activists think about/weigh these potential tradeoffs?
+  - Digital vs traditional networks?
 
 ---
 name: paper4-slide
