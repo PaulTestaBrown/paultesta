@@ -24,6 +24,9 @@ class: center, middle, inverse, title-slide
 .title[
 # Polling the 2022 U.S. Midterm Elections
 ]
+.subtitle[
+## Taubman Center’s Politics and Policy Lunch
+]
 .author[
 ### Paul Testa
 ]
@@ -65,10 +68,16 @@ background-size: fill
 
 - Election polling has consequences
 
+--
+
   - Campaigns
-  
+
+--
+
   - Media
-  
+
+--
+
   - Voters
   
 --
@@ -84,13 +93,22 @@ background-size: fill
 ---
 ## Will the polls get it right it 2022?
 
-To answer this question, we ask the following about polls:
+To answer this question, we'll ask the following about polls:
+
+--
 
 - How do they work?
 
+--
+
 - How do we use them to forecast an election?
 
+--
+
 - How have they done in the past?
+
+
+--
 
 - How will they do in the future?
 
@@ -139,9 +157,9 @@ class: inverse, center, middle
 
 - A poll is a survey conducted on sample from a population
 
-- The theory of polling depends on the power of **random sampling**
+- The **theory** of polling depends on the power of **random sampling**
 
-- The practice of polling tries to account and adjust for **all the ways a poll can fall short** of this theoretical ideal
+- The **practice** of polling tries to account and adjust for all the ways a **poll can fall short** of this theoretical ideal
 
 
 ---
@@ -151,7 +169,7 @@ class: inverse, center, middle
 
 --
 
-- **Sampling frame:** A list from which the sample was drawn
+- **Sampling frame:** A list from which the sample was drawn (e.g. a voter file)
 
 --
 
@@ -178,6 +196,29 @@ class: inverse, center, middle
 - **Margin of error:** A range of plausible values for the true population value
 
 ---
+## Polling Elections is Hard
+
+.pull-left[
+
+- The population is unknown
+
+- Response rates are low
+
+- Response rates differ
+
+- Adjustments are imperfect and uncertain
+
+]
+
+.pull-right[
+
+![](https://www.pewresearch.org/wp-content/uploads/2019/02/FT_19.02.27_ATP1_Afterbriefplateau_2.png?resize=420,492)
+
+[Pew](https://www.pewresearch.org/fact-tank/2019/02/27/response-rates-in-telephone-surveys-have-resumed-their-decline/)
+]
+
+
+---
 
 ![](images/weight1.png)
 
@@ -193,33 +234,13 @@ class: inverse, center, middle
 
 [New York Times](https://www.nytimes.com/interactive/2016/09/20/upshot/the-error-the-polling-world-rarely-talks-about.html)
 
----
-## The Challenge of Election Polling
-
-.pull-left[
-
-- The population is unknown
-
-- Response rates are low
-
-- Response rates differ
-
-- Adjustments are imperfect
-
-]
-
-.pull-right[
-
-![](https://www.pewresearch.org/wp-content/uploads/2019/02/FT_19.02.27_ATP1_Afterbriefplateau_2.png?resize=420,492)
-
-[Pew](https://www.pewresearch.org/fact-tank/2019/02/27/response-rates-in-telephone-surveys-have-resumed-their-decline/)
-]
 
 
 ---
 ## Error and Bias
 
-![]("https://miro.medium.com/proxy/1*k_D4-U7c3Tf8hJRpaOZoBQ.png")
+
+&lt;img src="https://miro.medium.com/proxy/1*k_D4-U7c3Tf8hJRpaOZoBQ.png" width="80%" style="display: block; margin: auto;" /&gt;
 
 
 [Source](https://medium.com/@akgone38/what-the-heck-bias-variance-tradeoff-is-fe4681c0e71b)
@@ -227,7 +248,7 @@ class: inverse, center, middle
 ---
 ## Polling Error
 
-Total Survey Error in Election polling is a function of:
+[Total Survey Error](https://academic.oup.com/poq/article/74/5/817/1815551) in election polling is a function of:
 
 - Sampling Error
 
@@ -238,7 +259,7 @@ Total Survey Error in Election polling is a function of:
 ---
 ## Polling Error
 
-Total Survey Error (how far off a poll's estimate is from the truth) can be broken down into different parts:
+[Total Survey Error](https://academic.oup.com/poq/article/74/5/817/1815551) in election polling is a function of:
 
 - **Sampling Error:**
   - That error that arises from sampling from a population
@@ -250,7 +271,7 @@ Total Survey Error (how far off a poll's estimate is from the truth) can be brok
 ---
 ## Polling Error
 
-Total Survey Error (how far off a poll's estimate is from the truth) can be broken down into different parts:
+[Total Survey Error](https://academic.oup.com/poq/article/74/5/817/1815551) in election polling is a function of:
 
 - Sampling Error:
 
@@ -264,7 +285,7 @@ Total Survey Error (how far off a poll's estimate is from the truth) can be brok
 ---
 ## Polling Error
 
-Total Survey Error (how far off a poll's estimate is from the truth) can be broken down into different parts:
+[Total Survey Error](https://academic.oup.com/poq/article/74/5/817/1815551) in election polling is a function of:
 
 - Sampling Error:
 
@@ -276,7 +297,7 @@ Total Survey Error (how far off a poll's estimate is from the truth) can be brok
     - Response bias: Some people are more less likely to take a poll
     - Measurement bias: Question wording, order, can influence responses
     - Processing and adjustment error: Failing to weight for key demographics
-
+    - And more...
 
 
 ---
@@ -290,10 +311,10 @@ Total Survey Error (how far off a poll's estimate is from the truth) can be brok
 ## 12 News/Roger Williams University Poll – August 2022
 
 - **Pollster:** Fleming &amp; Associates
-- **Sampling frame:** Probability Sample of Registered Voters
+- **Sampling frame:** Probability sample of registered voters, Aug 7-10, 2022
 - **Sample size:** 405
-- **Survey mode:** Live Caller with land and cell phone
-- Survey Instrument: See cross tabs of the questions here [Questions](https://www.wpri.com/democratic-primary-poll-results-august/)
+- **Survey mode:** Live caller with land lines and cell phone
+- **Survey Instrument:** See cross tabs of the questions here [Questions](https://www.wpri.com/democratic-primary-poll-results-august/)
 - **Survey weights:** None that I can tell
 - **Likely Voter Model:** Hard to say, but based on past surveys probably two-part screener:
   - Are you registered to vote?
@@ -309,17 +330,17 @@ MoE &amp;= \pm 4.9 \\
 \end{align}`
 $$
 ---
-## Evaluating a poll
+## Evaluating the Performance of a Single Poll
 
 .pull-left[
 Two criteria
 
-- Did they call the race correctly?
+- Did the poll call the race correctly?
   - Yes! McKee won
 
-- Did they get the margin right?
+- Did the poll get the margin right?
   - Not exactly...
-  - McKee one by about 3% percentage points over Foulkes, not Gorbea
+  - McKee won by about 3% percentage points over Foulkes, not Gorbea
 ]
 .pull-right[
 ![](images/mckee.png)
@@ -347,15 +368,21 @@ class: inverse, center, middle
 ![](images/forecast538.png)
 
 ---
-## Forecasting Elections
+## Forecasting Elections with Polls
 
-- The preeminence of polling in modern forecasts reflects the success of Nate Silver and FiveThirtyEight in correctly predicting the 2008 (49/50 states) 2012 (50/50) presidential elections 
+- The preeminence of polling in modern forecasts reflects the success of Nate Silver and FiveThirtyEight in correctly predicting the 2008 (49/50 states correct) 2012 (50/50) presidential elections 
   
   - Any one poll is likely to deviate from the true outcome
-  
+
+--
+
   - Averaging over multiple polls `\(\to\)` more accurate predictions than any one poll, provided...
 
+--
+
   - the polls aren't **systematically** biased
+
+--
 
 - The present concerns over polling the failure of such approaches to predict 
   
@@ -372,7 +399,7 @@ class: inverse, center, middle
 
 
 ---
-class: inverse, top, middle
+class: inverse, center, top
 background-image: url("https://media.giphy.com/media/EZRgasxEGmtN6nycsB/giphy.gif")
 background-size: fill
 ## Polling the 2016 Elections
@@ -382,7 +409,6 @@ background-size: fill
 ## Polling the 2016 Election:
 
 - The polls missed bigly
---
   - National polls were reasonably accurate (Clinton wins Popular Vote)
   - State polls overstated Clinton's lead / understated Trump support
 
@@ -401,7 +427,7 @@ Some likely explanations
 
 - Large number of undecided voters broke decisively for Trump
 
-- White voters without a college underrepresented in pre-election surveys
+- White voters without a college degree underrepresented in pre-election surveys
 
 A full autopsy from [AAPOR](https://www.aapor.org/Education-Resources/Reports/An-Evaluation-of-2016-Election-Polls-in-the-U-S.aspx)
 [Image](https://www.nytimes.com/interactive/2016/upshot/presidential-polls-forecast.html?_r=0#other-forecasts)
@@ -418,9 +444,9 @@ A full autopsy from [AAPOR](https://www.aapor.org/Education-Resources/Reports/An
 [New York Times](https://www.nytimes.com/2017/05/31/upshot/a-2016-review-why-key-state-polls-were-wrong-about-trump.html)
 
 ---
-class: inverse, top, middle
+class: inverse, center, top
 background-image: url("https://media.giphy.com/media/H4KYT0ZKOXIxWnULsk/giphy.gif")
-background-size: fill
+background-size: contain
 ## Polling the 2018 Elections
 
 
@@ -428,12 +454,19 @@ background-size: fill
 ## 2018: A brief repreive?
 
 - Polls did a better job
+
   - Most state polls weighted by education
-  - Underestimated Dems in House and Gubernatorial race
-  - No Partisan Bias in Senate Races
+  - Underestimated Democrats in House and Gubernatorial races
+  - No partisan bias in Senate Races
+
+--
+
 - Forecasts correctly call:
+
   - Democratic House
   - Republican Senate
+
+--
 
 However...
 
@@ -444,11 +477,12 @@ However...
 [Vox](https://www.vox.com/2022/9/23/23353634/polls-bias-democrats-midterms)
 
 ---
-class: inverse, top, middle
+class: inverse, center, top
+background-image: url("https://media.giphy.com/media/26FmQ3zBr4i0SqR0s/giphy.gif")
+background-size: fill
+
 ## Polling the 2020 Elections
 
-background-image:url("https://media.giphy.com/media/26FmQ3zBr4i0SqR0s/giphy.gif")
-background-size:cover
 
 ---
 ## 2020: Historic Problems, Unclear Solutions
@@ -461,13 +495,13 @@ background-size:cover
 
 - [Forecasts predicted](https://projects.fivethirtyeight.com/2020-election-forecast/senate/) Democrats would hold 
 
-  - 48-55 seats in the Senate (actual: 50)
-  - 225-254 seats in the House (actual: 222)
+  - 48-55 seats in the Senate (actual: 50 seats)
+  - 225-254 seats in the House (actual: 222 seats)
 
 ---
-## 2020: What when wrong
+## 2020: What Went Wrong
 
-- Unlike, 2016, currently no clear explanation for why the polls missed
+Unlike 2016, no clear cut explanations for what went wrong
 
 .pull-left[
 
@@ -477,7 +511,7 @@ background-size:cover
 - Failing to weight for education
 - Other demographic imbalances
 - "Shy Trump Voters"
-- Polling Early vs Election day voters
+- Polling early vs election day voters
 
 ]
 
@@ -502,21 +536,21 @@ class: inverse, center, middle
 # Polls: What will they think of next?
 
 ---
-## How will the polls do 2022 Elections
+## How Will the Polls do 2022 Elections
 
 - What are the polls saying?
 
 --
 
-- Why they might be wrong
+- Why they might be wrong?
 
 --
 
-- Why they might be all right
+- Why they might be all right?
 
 --
 
-- What do we think will influence the race more broadly
+- What do we think will influence the race more broadly?
 
 --
 
@@ -552,12 +586,19 @@ But first...
 
 - Lack a similar explanation for the polling errors of 2020.
 
-- [AAPOR Report](https://www.aapor.org/Education-Resources/Reports/2020-Pre-Election-Polling-An-Evaluation-of-the-202.aspx) lays out three scenarios going forward. Problems in 2020: 
+- [AAPOR Report](https://www.aapor.org/Education-Resources/Reports/2020-Pre-Election-Polling-An-Evaluation-of-the-202.aspx) lays out three scenarios going forward. Problems from 2020: 
+
+--
+
   - Persist in 2022 and beyond
+
+--
+
+  - Are unique to Presidential Elections (Problem for 2024, but not 2022)
   
-  - Are Unique to Presidential Elections (Problem for 2024, but not 2022)
-  
-  - Unique to 2020/Covid/Trump (Not a prolbem )
+--
+
+  - Unique to 2020/Covid/Trump (Not a problem )
 
 ---
 ## Why the polls might be wrong
@@ -567,6 +608,8 @@ But first...
 [Vox](https://www.vox.com/2022/9/23/23353634/polls-bias-democrats-midterms)
 ]
 
+--
+
 .pull-right[
 ![](images/cohn.png)
 [New York Times](https://www.nytimes.com/2022/09/12/upshot/polling-midterms-warning.html)
@@ -575,7 +618,7 @@ But first...
 ---
 ## Why the polls might be all right
 
-Nate Silver makes the [counterargument](https://www.vox.com/2022/9/23/23353634/polls-bias-democrats-midterms)
+Nate Silver makes the [counterargument](https://fivethirtyeight.com/features/will-the-polls-overestimate-democrats-again/)
 
 .pull-left[
 
@@ -597,15 +640,114 @@ Nate Silver makes the [counterargument](https://www.vox.com/2022/9/23/23353634/p
 
 --
 
-- Ask me November 10
+- Ask me November 9, 2022
+
+--
 
 - Polling is hard, and getting harder
   - Fundamental Nonresponse challenges seem real
+
+--
+
 - Pollsters are innovative, and forecasts are flexible
+
+--
+
 - What's the alternative
   - Experts? 
   - Fundamentals?
-- Will the polls get it right?
+
+--
+
+- Stop filibustering!! Will the polls get it right?
+
+---
+## How should we interpret these graphs
+
+.pull-left[
+![](images/aapor.png)
+[AAPOR](https://www.aapor.org/AAPOR_Main/media/MainSiteFiles/AAPOR-Task-Force-on-2020-Pre-Election-Polling_Report-FNL.pdf#page=8)
+]
+
+.pull-right[
+![](images/bias.png)
+[FiveThirtyEight](https://fivethirtyeight.com/features/will-the-polls-overestimate-democrats-again/)
+]
+
+---
+## Finally, some predictions
+
+- Most Likely Outcomes:
+
+  1. Republican House, Democratic Senate (Polls are all right)
+  2. Republican House and Senate (2020 Bias)
+  3. Democratic House and Senate (Polls are all right/Normal Polling Error)
+  4. Democratic House, Republican Senate (Polls aren't all right)
+
+---
+## Races to watch
+
+- Senate: 
+
+  - Pennsylvania: Fetterman (D) vs Oz (R)
+  - Georgia: Warnock`*` (D) vs Walker (R)
+  - Wisconsin: Johnson`*` (R) vs Barnes (D)
+  - Nevada: Cortez Masto`*` (D) vs Laxalt (R)
+  - Arizona: Kelly`*` (D) vs Masters (R)
+
+--
+
+- House: 
+
+  - Michigan 7th: Elissa Slotkin (D)
+  - Virgina 7th: Abigail Spanberger  (D)
+  - Iowa 3rd: Cindy Axne (D)
+
+--
+
+- Governor:
+
+  - Pennsylvania: Shapiro (D) vs Mastriano (R)
+  - Michigan: Whitmer (D)
+  - Kansas: Kelly (D)
+  - Arizona: Hobbs (D) vs Lake (R)
+
+---
+## Will it matter?
+
+Lots of things can happen between now and November 8. Here are few things we could talk about
+
+- The economy (CPI releases Oct 13, Employment Nov 4)
+
+- Dobbs v. Jackson; Reproductive Rights
+
+- Turnout (High vs low)
+
+- Demographics (Race, Gender, Age)
+
+- Individual Candidates 
+
+- Joe Biden (Approval, policy)
+
+- Donald Trump (Endorsements, Legal Troubles)
+
+- Foreign Affairs (Ukraine, Taiwan, ...)
+
+---
+class: center, middle
+
+
+# Thank You!
+
+Paul Testa
+
+Assistant Professor, Political Science
+
+Brown University
+
+&lt;paul_testa@brown.edu&gt;
+
+&lt;https://paultesta.org&gt;
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
