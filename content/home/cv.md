@@ -14,4 +14,4 @@ subtitle:
 
 ---
 
-## {{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/cv/PaulTesta_CV_Summer2021.pdf" "newtab" >}}CV{{< /staticref >}}.
+## {{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/cv/PaulTesta_CV_Winter2023.pdf" "newtab" >}}CV{{< /staticref >}}.
