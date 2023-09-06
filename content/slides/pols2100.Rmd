@@ -180,7 +180,7 @@ knitr::include_graphics("images/ps2100_06.png")
 
 --
 
-  - Sometimes we do!
+  - Sometimes we do! (CATEs)
   - Not always clear what's the relevant group
 
 --
@@ -221,7 +221,7 @@ knitr::include_graphics("images/treatment.png")
 ---
 # Choice
 
-```{r}
+```{r,out.width=700}
 knitr::include_graphics("images/choice.png")
 ```
 
