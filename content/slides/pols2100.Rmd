@@ -1,8 +1,8 @@
 ---
 title: "POLS 2100:"
-subtitle: "Comments for Identity and Political Activism"
+subtitle: "Public Preferences for New Information on Opioids"
 author: "Paul Testa"
-date: "April 13, 2023"
+date: "September 6, 2023"
 output:
   xaringan::moon_reader:
     css: ["default", "css/brown.css"]
@@ -21,397 +21,527 @@ knitr::opts_chunk$set(warning = FALSE, message = FALSE,
   fig.align = "center", out.width = "60%", cache = FALSE)
 library("tidyverse")
 library("xaringanExtra")
-library("anesr")
 library("forcats")
+
+if (!require("pacman")){ install.packages("pacman") }
+pacman::p_load("knitr","tidyverse","kableExtra",
+               "reshape2","haven","readxl","janitor",
+               "foreign","devtools","Hmisc",
+               "texreg","stargazer","xtable","GGally",
+               "broom","AER","car","arm","MASS",
+               "lmtest","lme4","rstan",
+               "ggrepel","patchwork"
+               )
+
+load("opioids.rda")
+
+library(srvyr)
+df_s <- df %>% as_survey_design(weights=weight)
+# Load Data
+source("functions.R")
+
 ```
 
 # Overview
 
-1. [Seoungin Choi](#paper1-slide)
+- "Flash" presentation of our paper by me
 
-2. [Vanessa Cruz Nichols](#paper2-slide)
+--
 
-3. [Frank Reichert](#paper3-slide)
+- Incisive comments by Susan
 
-4. [Javier Padilla](#paper4-slide)
+--
 
-5. [Morrey Liedke](#paper5-slide)
+- Broader discussion by all of us
+
+
 
 
 ---
-name: paper1-slide
-class: middle, center
+# Opioids are a problem in the U.S.
 
-#  Seoungin Choi
-
-### Effects of Broadness of Frames on Mobilization: Different Framing Effects on the #MeToo Movement
-
-#### and
-
-### Effects of the Gain and Loss Frame on Emotions and Participation in Immigrant Social Movements
-
-
----
-## Summary: Broadness of Frames
-
-- What kinds of frames are most effective
-
-  - Broad 'Master' Frames vs More Narrow defined in terms of Social Identity
-
---
-
-- Experimental design assessing effects of Equality > Women > Feminist frames about \#MeToo movement on "high" vs "low" cost outcomes
-
-
---
-
-- More narrow frames appear more sucessful at mobilizing more high cost actions in support of \#MeToo (among men!)
-
----
-## Comments
-
-Reviewer 2 type critiques:
-
---
-
-- Small, student sample 
-
-  - More descriptives on characteristics
-  - Replication and extension
-
---
-
-- Are any of these outcomes really "high cost"
-
---
-
-- Mostly Null or Negative ATEs
-  - Are these just weak frames
-
---
-
-- CATEs by gender suggest divergent responses from women
-
-  - Really interesting potential tension between which frames mobilize which audiences and the potential tradeoffs
-  - Can movements target different frames to different groups?
-  
-
----
 
 ```{r}
-knitr::include_graphics("images/c1.png")
+knitr::include_graphics("images/d1.png")
+```
+
+
+
+---
+# Opioids are a problem in the U.S.
+
+
+```{r}
+knitr::include_graphics("images/d2.jpg")
 ```
 
 
 ---
-## Questions
+# Motivation
 
-1. Does this replicate with different sample
-
---
-
-2. Does this generalize to different issues?
+- Opioids are a problem in the U.S.
 
 --
 
-3. What's the mechanism? 
+- Information has a role to play in addressing this problem
+
+--
+
+- Informing the public is hard
 
 ---
-## Gain-Loss Frames
-
-
-
-- Clever to bring in self interest into gain-loss/risk aversion
-
---
-
-- How to Measure vs Manipulate 
-
-  - Emotion
-
-  - Hypothetical vs actual self interest ([(White, Laird, and Allen, 2014)](https://www.cambridge.org/core/journals/american-political-science-review/article/selling-out-the-politics-of-navigating-conflicts-between-racial-group-interest-and-selfinterest/067DAC12A46715BAFAF1172F239AEA1F)
-
---
-
-- Not convinced by these specific treatments 
+background-image:url("https://miro.medium.com/v2/resize:fit:1400/0*or3WjzJ_LYtsx33d")
+background-size: contain
 
 ---
-name: paper2-slide
-class: middle, center
+# Motivation
 
-# Vanessa Cruz Nichols
-## Women at the Helm
+- Opioids are a problem in the U.S.
+
+
+- Information has a role to play in addressing this problem
+
+
+- Informing the public is hard
+
+--
+
+- Assessing the effects of these efforts can be challenging
+
+---
+# Goals
+
+- Where do people receive information about the opioid crisis?
+
+--
+
+- What are the effects of attempts to inform the public about this crisis?
+
+--
+
+- How might these effects vary based on the likelihood of receiving this information?
+
+---
+# The Standard Approach: Do an Experiment!
+
+
+```{r}
+knitr::include_graphics("images/ps2100_01.png")
+```
+
+--
+
+*The effect if everyone received the message*
+
+
+---
+# What we get from the standard approach
+
+```{r}
+knitr::include_graphics("images/ps2100_02.png")
+```
+
+---
+# Is a weighted average of
+
+```{r}
+knitr::include_graphics("images/ps2100_03.png")
+```
+
+---
+# The effects among a message's likely audience
+
+```{r}
+knitr::include_graphics("images/ps2100_04.png")
+```
+
+---
+# And its unlikely audience
+
+```{r}
+knitr::include_graphics("images/ps2100_05.png")
+```
+
+---
+# What we get versus what we want
+
+```{r}
+knitr::include_graphics("images/ps2100_06.png")
+```
+
+---
+# Why we bring choice into our experimental design
+
+- Why not just estimate effects in each group?
+
+--
+
+  - Sometimes we do!
+  - Not always clear what's the relevant group
+
+--
+
+- Dangers of multiple comparisons, researcher degrees of freedom
+
+--
+
+- What we say $\neq$ what we do
+
+--
+
+Bringing choice into design and analysis of experiments helps address these problems and lets us ask new questions
+
+---
+# How we bring choice into our design 
+
+```{r}
+knitr::include_graphics("images/ps2100_07.png")
+```
+
+---
+# Treatment
+
+
+```{r}
+knitr::include_graphics("images/treatment.png")
+```
+
+---
+# Choice
+
+```{r}
+knitr::include_graphics("images/choice.png")
+```
+
+About 55 percent of the sample select into treatment
+
+---
+# Data
+
+- Nationally representative survey fielded by YouGov (N=1,000) for the Taubman Institute in the Fall of 2018 
+
+- The "median" respondent in our sample was a 47-year- old, white, woman with some college who identifies as being ideologically moderate and a political independent.
+
+---
+## Outcomes
+
+- Self-reported sources of information (descriptive)
+
+- Objective knowledge: "What percent of heroin users started with a prescription painkiller" (80 percent)
+
+- Causal attributions: Over-prescription vs illicit drug use
+
+- Two scales measuring support for more punitive and more treatment oriented responses to the opioid crisis
+
+
+---
+# Overview of Results
+
+Where do people say they get information about opioids
+
+--
+  
+- A variety of sources, in particular the media (> 70%)
+  
+--
+
+Who chooses to receive additional information
+
+--
+
+- White, Liberal, college educated, people with personal experience
+
+--
+
+Did that information have an effect:
+
+--
+
+- Objective knowledge
+- Causal attributions
+- Policy beliefs
+
+
+
+---
+
+## Objective Knowledge
+
+```{r}
+know_df <- effects_fn(df, "dv_know_correct")
+know_df1 <- know_df[c(1:4),] 
+know_df1[2:4,1:7] <- NA
+know_df2 <- know_df[c(1:4),] 
+```
+
+```{r}
+ggplot(know_df1,aes(Estimate, Difference,col=Estimand))+
+  geom_point(aes(shape=Estimand))+
+  geom_linerange(aes(ymin=ll,ymax=ul),size=.3)+
+  geom_linerange(aes(ymin=ll90,ymax=ul90),size=.6)+
+  geom_hline(yintercept = 0,linetype="dashed")+
+  theme(axis.text.x = element_text(
+    angle = 0, hjust = 1),
+    axis.text.y = element_text(face=ifelse(rev(know_df1$Estimate)%in%c("ATE","ACTE:","CATE:"),"bold","italic"),
+                               size=ifelse(rev(know_df1$Estimate)%in%c("ATE","ACTE:","CATE:"),12,10)
+    )
+  ) + coord_flip()
+```
+
+---
+## Objective Knowledge
+
+
+```{r}
+ggplot(know_df2,aes(Estimate, Difference,col=Estimand))+
+  geom_point(aes(shape=Estimand))+
+  geom_linerange(aes(ymin=ll,ymax=ul),size=.3)+
+  geom_linerange(aes(ymin=ll90,ymax=ul90),size=.6)+
+  geom_hline(yintercept = 0,linetype="dashed")+
+  theme(axis.text.x = element_text(
+    angle = 0, hjust = 1),
+    axis.text.y = element_text(face=ifelse(rev(know_df1$Estimate)%in%c("ATE","ACTE:","CATE:"),"bold","italic"),
+                               size=ifelse(rev(know_df1$Estimate)%in%c("ATE","ACTE:","CATE:"),12,10)
+    )
+  ) + coord_flip()
+```
+
+---
+## Objective Knowledge
+
+```{r}
+plot_effects_fn(df,"dv_know_correct")
+
+```
+
+
+---
+## Casual attributions: Over-prescription
+
+```{r}
+over_df <- effects_fn(df, "dv_cause_providers")
+over_df1 <- over_df[c(1:4),] 
+over_df1[2:4,1:7] <- NA
+over_df2 <- over_df[c(1:4),] 
+```
+
+```{r}
+ggplot(over_df1,aes(Estimate, Difference,col=Estimand))+
+  geom_point(aes(shape=Estimand))+
+  geom_linerange(aes(ymin=ll,ymax=ul),size=.3)+
+  geom_linerange(aes(ymin=ll90,ymax=ul90),size=.6)+
+  geom_hline(yintercept = 0,linetype="dashed")+
+  theme(axis.text.x = element_text(
+    angle = 0, hjust = 1),
+    axis.text.y = element_text(face=ifelse(rev(over_df1$Estimate)%in%c("ATE","ACTE:","CATE:"),"bold","italic"),
+                               size=ifelse(rev(over_df1$Estimate)%in%c("ATE","ACTE:","CATE:"),12,10)
+    )
+  ) + coord_flip()
+  
+```
+
+---
+## Casual attributions: Over-prescription
+
+
+```{r}
+ggplot(over_df2,aes(Estimate, Difference,col=Estimand))+
+  geom_point(aes(shape=Estimand))+
+  geom_linerange(aes(ymin=ll,ymax=ul),size=.3)+
+  geom_linerange(aes(ymin=ll90,ymax=ul90),size=.6)+
+  geom_hline(yintercept = 0,linetype="dashed")+
+  theme(axis.text.x = element_text(
+    angle = 0, hjust = 1),
+    axis.text.y = element_text(face=ifelse(rev(over_df1$Estimate)%in%c("ATE","ACTE:","CATE:"),"bold","italic"),
+                               size=ifelse(rev(over_df1$Estimate)%in%c("ATE","ACTE:","CATE:"),12,10)
+    )
+  ) + coord_flip()
+```
+
+
+---
+## Casual attributions: Illicit drug use
+
+```{r}
+over_df <- effects_fn(df, "dv_cause_users")
+over_df1 <- over_df[c(1:4),] 
+over_df1[2:4,1:7] <- NA
+over_df2 <- over_df[c(1:4),] 
+```
+
+```{r}
+ggplot(over_df1,aes(Estimate, Difference,col=Estimand))+
+  geom_point(aes(shape=Estimand))+
+  geom_linerange(aes(ymin=ll,ymax=ul),size=.3)+
+  geom_linerange(aes(ymin=ll90,ymax=ul90),size=.6)+
+  geom_hline(yintercept = 0,linetype="dashed")+
+  theme(axis.text.x = element_text(
+    angle = 0, hjust = 1),
+    axis.text.y = element_text(face=ifelse(rev(over_df1$Estimate)%in%c("ATE","ACTE:","CATE:"),"bold","italic"),
+                               size=ifelse(rev(over_df1$Estimate)%in%c("ATE","ACTE:","CATE:"),12,10)
+    )
+  ) + coord_flip()
+```
+
+---
+## Casual attributions: Illicit drug use
+
+
+```{r}
+ggplot(over_df2,aes(Estimate, Difference,col=Estimand))+
+  geom_point(aes(shape=Estimand))+
+  geom_linerange(aes(ymin=ll,ymax=ul),size=.3)+
+  geom_linerange(aes(ymin=ll90,ymax=ul90),size=.6)+
+  geom_hline(yintercept = 0,linetype="dashed")+
+  theme(axis.text.x = element_text(
+    angle = 0, hjust = 1),
+    axis.text.y = element_text(face=ifelse(rev(over_df1$Estimate)%in%c("ATE","ACTE:","CATE:"),"bold","italic"),
+                               size=ifelse(rev(over_df1$Estimate)%in%c("ATE","ACTE:","CATE:"),12,10)
+    )
+  ) + coord_flip()
+```
+
+---
+## Policy Beliefs: Treatment Oriented Responses
+
+
+```{r}
+df$dv_pca_treatment <-  psych::principal(df  %>%
+                                           dplyr::select("op_prop_1","op_prop_4",
+                                                         "op_prop_5","op_prop_6","op_prop_7"
+                                                         ), scores=T,missing=T)$scores[,1]
+df$dv_pca_punitive <- psych::principal(df  %>%
+                                         dplyr::select("op_prop_2","op_prop_3"), scores=T,missing=T)$scores[,1]
+
+pun_df <- effects_fn(df, "dv_pca_punitive")
+pun_df1 <- pun_df[c(1:4),] 
+pun_df1[2:4,1:7] <- NA
+pun_df2 <- pun_df[c(1:4),] 
+
+treat_df <- effects_fn(df, "dv_pca_treatment")
+treat_df1 <- treat_df[c(1:4),] 
+treat_df1[2:4,1:7] <- NA
+treat_df2 <- treat_df[c(1:4),] 
+
+```
+
+
+```{r}
+ggplot(treat_df1,aes(Estimate, Difference,col=Estimand))+
+  geom_point(aes(shape=Estimand))+
+  geom_linerange(aes(ymin=ll,ymax=ul),size=.3)+
+  geom_linerange(aes(ymin=ll90,ymax=ul90),size=.6)+
+  geom_hline(yintercept = 0,linetype="dashed")+
+  theme(axis.text.x = element_text(
+    angle = 0, hjust = 1),
+    axis.text.y = element_text(face=ifelse(rev(treat_df1$Estimate)%in%c("ATE","ACTE:","CATE:"),"bold","italic"),
+                               size=ifelse(rev(treat_df1$Estimate)%in%c("ATE","ACTE:","CATE:"),12,10)
+    )
+  ) + coord_flip()
+```
+
+---
+## Policy Beliefs: Treatment Oriented Responses
+
+
+```{r}
+ggplot(treat_df2,aes(Estimate, Difference,col=Estimand))+
+  geom_point(aes(shape=Estimand))+
+  geom_linerange(aes(ymin=ll,ymax=ul),size=.3)+
+  geom_linerange(aes(ymin=ll90,ymax=ul90),size=.6)+
+  geom_hline(yintercept = 0,linetype="dashed")+
+  theme(axis.text.x = element_text(
+    angle = 0, hjust = 1),
+    axis.text.y = element_text(face=ifelse(rev(treat_df2$Estimate)%in%c("ATE","ACTE:","CATE:"),"bold","italic"),
+                               size=ifelse(rev(treat_df2$Estimate)%in%c("ATE","ACTE:","CATE:"),12,10)
+    )
+  ) + coord_flip()
+```
+
+---
+## Policy Beliefs: Punitive Responses
+
+
+```{r}
+ggplot(pun_df1,aes(Estimate, Difference,col=Estimand))+
+  geom_point(aes(shape=Estimand))+
+  geom_linerange(aes(ymin=ll,ymax=ul),size=.3)+
+  geom_linerange(aes(ymin=ll90,ymax=ul90),size=.6)+
+  geom_hline(yintercept = 0,linetype="dashed")+
+  theme(axis.text.x = element_text(
+    angle = 0, hjust = 1),
+    axis.text.y = element_text(face=ifelse(rev(pun_df1$Estimate)%in%c("ATE","ACTE:","CATE:"),"bold","italic"),
+                               size=ifelse(rev(pun_df1$Estimate)%in%c("ATE","ACTE:","CATE:"),12,10)
+    )
+  ) + coord_flip()
+```
+
+---
+## Policy Beliefs: Punitive Responses
+
+
+```{r}
+ggplot(pun_df2,aes(Estimate, Difference,col=Estimand))+
+  geom_point(aes(shape=Estimand))+
+  geom_linerange(aes(ymin=ll,ymax=ul),size=.3)+
+  geom_linerange(aes(ymin=ll90,ymax=ul90),size=.6)+
+  geom_hline(yintercept = 0,linetype="dashed")+
+  theme(axis.text.x = element_text(
+    angle = 0, hjust = 1),
+    axis.text.y = element_text(face=ifelse(rev(pun_df2$Estimate)%in%c("ATE","ACTE:","CATE:"),"bold","italic"),
+                               size=ifelse(rev(pun_df2$Estimate)%in%c("ATE","ACTE:","CATE:"),12,10)
+    )
+  ) + coord_flip()
+```
+
+
 
 ---
 ## Summary
 
---
-- What kinds of appeals -- threat, opporunity, or both -- mobilize action on immigration?
+- People receive information about the opioid crisis from a variety of sources
 
 --
 
-- Multi-arm experiment (threat, opportunity, threat + opp, control)
-
+- The effects of information vary based on likelihood of receiving it
+    - Likely recipients of information respond how we would hope: More likely to view the issue as public health problem in need of public health responses
+    - Unlikely recipients are largely unmoved
 
 --
 
-- Threat can mobilize action (among women, demobilize among men?), but threat + opportunity appears to be even more mobilizing
+- Incorporating choice into the design of our experiment key. 
+
+--
+
+- Future research could look at
+  - Alternative treatments (randomized conditional on choice)
+  - Alternative measures
+  - Broader applications to other questions in political science and public health
 
 ---
-## Comments
-
-Clever, clear design
+class: inverse, center, middle
 
 
+# Thank You
 
---
+Paul Testa
 
-Presentational suggestions:
+<paul_testa@brown.edu>
 
-- ATEs -> gender CATEs (Table C5) -> differnece in CATEs (Table 4.1)
+<https://paultesta.org>
 
-
-- Theory before results?
-
---
-
-What's the mechanism?
-
-- Ways to further unpack socialization argument? 
-  - Heterogeneous effects by age/generation
-  - What's up with men?
-
-- Mediation analyses of emotional response?
-
-- Incorporate discussions of threat/opportunity/emotion into structured interviews?
-
---
-
-- Is the mechanism really emotion? (Table C4)
+Brown University
 
 
 ---
+# Reviewer Critiques
 
-```{r}
-knitr::include_graphics("images/p2_1.png")
-```
+1. Threats to internal validity
 
----
-name: paper3-slide
-class: middle, center
+2. Theoretical explanation for selective approach and avoidance
 
-#  Frank Reichert et al.
+3. Alternative explanations for findings
 
-## Youth on the Sidelines?
+4. Broader theoretical methodological implications
 
-
----
-## Summary
-
-- What explains non-participation in social protests
-
-- Analysis of survey data and structured interviews from Students in Hong Kong in 2020
-
-- The dynamics of non-participation (non-conversion & erosion) are distinct from participation
-  - Structural barriers and deterrents
-  - Lack of movement identities, weak informal networks, and growth of more hostile actions/framings -> non-participation
-
----
-
-```{r}
-knitr::include_graphics("images/p3.png")
-```
-
-  
----
-## Comments
-
-
-- Beautiful descriptive analyses
-
---
-
-
-- Is participation: 
-  - Binary (Participant Non-participant)
-  - Continuous (degrees of participation)
-  - Categorical measures (participant types)
-
---
-
-- Movement support is not static but it's hard to capture these dynamics 
-  - Possible to link responses from baseline March 2019 survey
-  - Non students?
-
---
-
-- Whither internal efficacy?
-
---
-
-- How do we adjudicate the relative impact of different factors?
-  - Material vs Ideational concerns?
-  - What's the causal DAG?
-  
---
-
-- How unique are these dynamics to place and time?
-
---
-
-- What's the equilibirium? How should movement activists think about/weigh these potential tradeoffs?
-  - Digital vs traditional networks?
-
----
-name: paper4-slide
-class: middle, center
-
-#  Javier Padilla
-
-## Do Protests Change Citizens’ Perceptions of Political Parties?
-### Evidence from the 15-M in Spain
-
----
-## Summary
-
-- Does participation in social protest change political attiudes
-
-
---
-
-- Leverage an "Unexpected Event During Survey Design" to compare the attitudes of participants in the 15-M surveyed before May 15, to those surveyed after
-
---
-
-- Credible evidence that participants in the protest came to see the PSOE as less liberal (more centrist)
-
-
----
-## Comments
-
-
-- Clever design, carefully executed, compelling results
-
-  - Why relegate vote choice to the appendix?
-
---
-
-Further leverage from:
-
-- Alternative DVs:
-  - Within subject, change scores
-  - Summary of perceived ideology/polarization of party system
-  - Scores for the PP (other parties)
-  - Measures of populism
-- Alternative Samples:
-  - Non leftists (Right/Moderates)
-  
---
-
-Broader questions
-
-- Do the results really address populist dimension vs empty space claims?
-- What's the mechanism?
-- Generalizability to different contexts/issues?
-
----
-name: paper5-slide
-class: middle, center
-
-#  Morrey Liedke
-
-## From Conciousness to Action:
-### Mutliple Minorities and Political Engagement
-
----
-## Summary
-
-- Does high feminist group consciousness translate into political action?
-
-  - Does prior experiences with other forms of discrimination contribute to this identity 
-
-- Synthesize competing expectations for the origins and consequences of gendered/feminist identity
-
-- Replicate and extend [Harnois (2015)](https://psycnet.apa.org/record/2015-53801-005) incorporating new variables and measurements with additional survey experiments
-
----
-## Comments
-
-- Really wonderful attention to the complex, intersectional nature of identity and positionality
-  
-  - Your contributions are bigger than just a replication and extension
-
---
-
-- What's the direction of casuality? Hard to unpack with cross sectional data
-
---
-
-- What's the ideal experiment? 
-  - How does feminist identity matter? 
-  - When does feminist identity matter?
-  - For whom does feminist identity matter?
-  - Why does feminist identity matter?
-
---
-
-- Potential natural experiments with *Dobbs* other unexpected events
-
---
-
-- Is their a single/common shared conception feminist group conciousness?
-  - Consistent or contextual
-
-
---
-
-- Differences in perceived discrimination (1-1 and 4-4 are both ) vs Perceiving discrimination is greater for women vs men?
-
----
-
-
-```{r}
-data("timeseries_2020")
-df <- timeseries_2020
-
-
-df %>% 
-  mutate(
-    sexuality = case_when(
-      V201601 > 0 ~ as_factor(V201601),
-      T ~ NA_character_
-    ),
-    sex = case_when(
-      V201600 > 0 ~ as_factor(V201600),
-      T ~ NA_character_
-    ), 
-    discrim_women = case_when(
-      V202532 < 0 ~ NA_real_,
-      V202532 > 0 ~ (V202532-5)*-1
-      ),
-    discrim_men = case_when(
-      V202533 < 0 ~ NA_real_,
-      V202533 > 0 ~ (V202533-5)*-1
-    ),
-    diff = discrim_women - discrim_men
-  ) -> df
-
-df %>% 
-  ggplot(aes(discrim_men,discrim_women, col = diff))+
-  geom_jitter()+
-  scale_color_gradient2()
-```
-
-
-
----
-
-```{r}
-df %>%
-  filter(!is.na(sexuality)) %>% 
-  filter(!is.na(sex)) %>% 
-  ggplot(aes(sexuality, discrim_women, col = sex))+
-  stat_summary()+
-  coord_flip()
-```
-
+5. Persistence of the treatment effect
