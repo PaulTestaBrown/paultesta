@@ -42,6 +42,10 @@ source("functions.R")
 
 ```
 
+```{r xaringan-tile-view, echo=FALSE}
+xaringanExtra::use_tile_view()
+```
+
 # Overview
 
 - "Flash" presentation of our paper by me
@@ -199,10 +203,18 @@ knitr::include_graphics("images/ps2100_07.png")
 ```
 
 ---
+# What we get versus what we want
+
+```{r}
+knitr::include_graphics("images/ps2100_06.png")
+```
+
+
+---
 # Treatment
 
 
-```{r}
+```{r,out.width=700}
 knitr::include_graphics("images/treatment.png")
 ```
 
