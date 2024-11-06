@@ -1,0 +1,251 @@
+---
+title: "Unpacking the 2024 Presidential Election"
+subtitle: "What Happens Next"
+date: last-modified
+date-format: "[Updated ]MMM D, YYYY"
+format: 
+  revealjs:
+    theme: brownslides.scss
+    # logo: images/pols1140_hex.png
+    footer: "Paul Testa"
+    multiplex: false
+    transition: fade
+    slide-number: c
+    incremental: true
+    center: false
+    menu: true
+    scrollable: true
+    highlight-style: github
+    progress: true
+    code-overflow: wrap
+    chalkboard: true
+    # include-after-body: title-slide.html
+    title-slide-attributes:
+      align: left
+      data-background-image: images/pols1140_hex.png
+      data-background-position: 90% 50%
+      data-background-size: 40%
+filters:
+  - openlinksinnewpage
+execute: 
+  eval: true
+  echo: true
+  warning: false
+  message: false
+  cache: true
+---
+
+
+```{r}
+#| label: init
+#| echo: false
+#| results: hide
+#| warning: false 
+#| message: false
+
+library(tidyverse)
+library(labelled)
+library(haven)
+library(DeclareDesign)
+library(easystats)
+library(texreg)
+
+```
+
+
+## Overview
+
+- What happened?
+
+- Why did it happen?
+
+- What have we learned?
+
+- What comes next?
+
+# {{<fa magnifying-glass>}} What Happened?
+
+## What happened?
+
+:::{.panel-tabset}
+
+## Overview
+
+- Trump [wins the Presidency]{.blue} (~312-226 electoral votes)
+
+- Republicans [flip the Senate]{.blue} (51-57 seat majority)
+
+- Control of the House [still in play]{.blue} (probably won't know for a while)
+
+## A red shift
+
+![](images/10_nyt_red.png)
+
+## Almost everywhere
+
+![](images/10_nyt_county.png)
+
+:::
+
+
+# {{<fa magnifying-glass>}} Why did it happen?
+
+## Why did it happen? {.smaller}
+
+- Why did Kamala/Democrats lose?
+
+- Why did Trump/Republicans win?
+
+- What's the counterfactual?
+
+- What would have happened had:
+
+  - Biden not run for re-election
+  - The Republicans nominated Nikki Haley
+  - Had we accepted higher unemployment for lower inflation?
+
+## Types of explanations {.smaller}
+
+- It's the [campaigns]{.blue}
+
+- It's about [specific groups of voters]{.blue}
+
+- It's about the issues: [immigration, abortion, democracy, crime, culture war]{.blue}
+
+- It's about the issue: ["it's the economy, stupid"]{.blue}
+
+- It's about [racism, sexism, transphobia, xenophobia]{.blue}
+
+- It's about the [vibes]{.blue} (anti- establishment/elite/incumbency )
+
+::::{.fragment}
+It's probably about all of these things, to some degree. Beware of singular explanations and broad generalizations.
+::::
+
+## Early exit polling
+
+::::{.panel-tabset}
+
+## Overview
+
+These are mostly from [CNN's exit polling](https://www.cnn.com/interactive/2024/politics/2020-2016-exit-polls-2024-dg/) as well as [NBC](https://www.nbcnews.com/politics/2024-elections/exit-polls) and [the Washington Post](https://www.washingtonpost.com/elections/interactive/2024/exit-polls-2024-election/) 
+
+The margins can and will change when weighted against the final results
+
+
+## Gender and Race
+
+![](images/10_cnn7.png)
+
+## Education
+
+![](images/10_cnn6.png)
+
+
+## Age
+
+![](images/10_cnn5.png)
+
+
+![](images/10_nbc1.png)
+
+
+## Geography
+
+![](images/10_cnn4.png)
+
+
+## Economy
+
+![](images/10_cnn3.png)
+
+## Class
+
+![](images/10_wapo1.png)
+
+## Abortion
+
+![](images/10_cnn2.png)
+
+
+## New Voters
+
+![](images/10_cnn1.png)
+
+
+::::
+
+
+# {{<fa magnifying-glass>}} What have we learned...
+
+## ...About the polls {.smaller}
+
+[Are the polls fundamental broken?]{.blue}
+
+- [Yes]{.blue} Missed the strength and depth of Trump;s support in three elections
+
+- [No:]{.yellow} Wait for the final counts. The absolute polling error likely within historical margins
+
+- [Yes:]{.blue} The forecasts were off in all the battleground states
+
+- [No:]{.yellow} Forecasts showed a 50-50 race in which a Trump sweep was the most likely (of many) possible battleground outcomes
+
+- [Yes:]{.blue} Polls like the Selzer/Iowa poll missed bigly
+
+- [No:]{.yellow} But polls that took a more aggressive weighting approach were more accurate
+
+- [Yes:]{.blue} It's unclear that their strategies were anything but luck/fear of getting it wrong (e.g. [weighting on past vote](https://goodauthority.org/news/election-poll-vote2024-data-pollster-choices-weighting/) tended to increase support of Harris )
+
+- [No:]{.yellow} Still the polls picked up evidence of racial depolarization, education polarization, shifts in PID that shaped the election....
+
+## Can we trust the polls?
+
+- Polling is hard.
+
+- Polling with Trump on the ticket is particularly hard
+
+- My answer is always relative to what?
+
+  - Pundits vibes/conventional wisdom? Yes
+  - Prediction markets? Honestly, still probably yes.
+  
+- Polls are useful even when they're wrong
+
+
+# {{<fa magnifying-glass>}} What comes next?
+
+## What comes next?
+
+- A lot depends on the House
+
+- Congress has several biases toward the status quo and inaction (super-majoritarian Filibuster)
+  
+  - National abortion ban, 20% tariffs seem unlikely. But so did Trump's second term...
+  
+- More worried about the Executive Branch
+
+  - Less oversight, fewer guardrails, more particular harms (immigration, judicial appointments, civil service, foreign policy)
+
+- How much does Trump care about governing?
+  
+  - How much does Trump care about score settling
+  
+  
+## What comes next? {.smaller}
+
+- A lot depends on you
+
+- Politics is about power
+
+- To wield power you need to win elections
+
+- Winning elections requires coalitions 
+
+- Building coalitions requires compromise
+
+- It's a lot of work, that often happens at a more local level
+
+- But it's worth it. And it's more important than ever.
+
+
+

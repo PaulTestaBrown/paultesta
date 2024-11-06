@@ -1,0 +1,58 @@
+/*-- scss:defaults --*/
+
+// Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap');
+
+$maincol: #06182c;
+$accent1: #05508d;
+$accent2: #999966;
+
+$presentation-heading-color: $maincol !default;
+$body-color: $maincol !default;
+$link-color: $accent2 !default;
+
+/*-- scss:rules --*/
+
+#title-slide {
+  text-align: left;
+  .title {
+    color: $body-color;
+    font-size: 1.5em;
+    // font-weight: 350;
+    font-weight: heavier;
+  }
+
+  .subtitle {
+    color: $accent1;
+    font-style: italic;
+    margin-top: 0em;
+    font-weight: lighter;
+  }
+  .date {
+    color: $accent2;
+    font-size: .75em;
+  }
+}
+
+
+
+.inverse{
+   color: #d6d6d6;
+  h1, h2, h3 {
+    color: #f3f3f3;
+  }
+  .slide-background-content {
+    background-color: $maincol;
+  }
+}
+
+
+.blue {
+  color: $accent1;
+  font-weight: bold;
+}
+
+.yellow {
+  color: $accent2;
+  font-weight: bold;
+}
