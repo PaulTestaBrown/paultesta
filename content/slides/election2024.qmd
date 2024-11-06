@@ -1,13 +1,13 @@
 ---
-title: "Unpacking the 2024 Presidential Election"
+title: "Unpacking the 2024 <br> Presidential Election"
 subtitle: "What Happens Next"
+# author: "Paul Testa"
 date: last-modified
-date-format: "[Updated ]MMM D, YYYY"
+date-format: "MMM D, YYYY"
 format: 
   revealjs:
     theme: brownslides.scss
-    # logo: images/pols1140_hex.png
-    footer: "Paul Testa"
+    footer: "Unpacking the 2024 Election"
     multiplex: false
     transition: fade
     slide-number: c
@@ -22,7 +22,7 @@ format:
     # include-after-body: title-slide.html
     title-slide-attributes:
       align: left
-      data-background-image: images/pols1140_hex.png
+      data-background-image: images/10_elect.png
       data-background-position: 90% 50%
       data-background-size: 40%
 filters:
@@ -71,19 +71,26 @@ library(texreg)
 
 ## Overview
 
+:::{.nonincremental}
+
 - Trump [wins the Presidency]{.blue} (~312-226 electoral votes)
 
-- Republicans [flip the Senate]{.blue} (51-57 seat majority)
+- Republicans [flip the Senate]{.blue} (51-56 seat majority)
 
 - Control of the House [still in play]{.blue} (probably won't know for a while)
+
+:::
 
 ## A red shift
 
 ![](images/10_nyt_red.png)
 
+[NYT](https://www.nytimes.com/interactive/2024/11/06/us/politics/presidential-election-2024-red-shift.html)
+
 ## Almost everywhere
 
 ![](images/10_nyt_county.png)
+[NYT](https://www.nytimes.com/interactive/2024/11/06/us/politics/presidential-election-2024-red-shift.html)
 
 :::
 
@@ -100,9 +107,9 @@ library(texreg)
 
 - What would have happened had:
 
-  - Biden not run for re-election
+  - Biden not run 
   - The Republicans nominated Nikki Haley
-  - Had we accepted higher unemployment for lower inflation?
+  - Had we responded differently to the pandemic/recession
 
 ## Types of explanations {.smaller}
 
@@ -116,7 +123,7 @@ library(texreg)
 
 - It's about [racism, sexism, transphobia, xenophobia]{.blue}
 
-- It's about the [vibes]{.blue} (anti- establishment/elite/incumbency )
+- It's about the [vibes]{.blue} (anti- establishment/elite/incumbency; negative partisanship)
 
 ::::{.fragment}
 It's probably about all of these things, to some degree. Beware of singular explanations and broad generalizations.
@@ -133,7 +140,7 @@ These are mostly from [CNN's exit polling](https://www.cnn.com/interactive/2024/
 The margins can and will change when weighted against the final results
 
 
-## Gender and Race
+## Gender & Race
 
 ![](images/10_cnn7.png)
 
@@ -147,7 +154,11 @@ The margins can and will change when weighted against the final results
 ![](images/10_cnn5.png)
 
 
-![](images/10_nbc1.png)
+![](images/10_nbc_age.png)
+
+## PID
+
+![](images/10_wapo_pid.png)
 
 
 ## Geography
@@ -182,7 +193,7 @@ The margins can and will change when weighted against the final results
 
 [Are the polls fundamental broken?]{.blue}
 
-- [Yes]{.blue} Missed the strength and depth of Trump;s support in three elections
+- [Yes]{.blue} Missed the strength and depth of Trump's support in three elections
 
 - [No:]{.yellow} Wait for the final counts. The absolute polling error likely within historical margins
 
@@ -200,29 +211,33 @@ The margins can and will change when weighted against the final results
 
 ## Can we trust the polls?
 
+![](https://www.thedailybeast.com/resizer/v2/TKI45PD2XBBTTH4DQKAYAFIUKM.png?smart=true&auth=22ccdb3879a154e86e010279910b5fed4fe6c3c5a9308b08e595e2b347e3567b&width=3000&height=1687)
+
+## Can we trust the polls?
+
 - Polling is hard.
 
-- Polling with Trump on the ticket is particularly hard
+- Polling with Trump on the ballot is particularly hard
 
-- My answer is always relative to what?
+- My answer is always [relative to what?]{.blue}
 
-  - Pundits vibes/conventional wisdom? Yes
+  - Talking heads/conventional wisdom? Yes
   - Prediction markets? Honestly, still probably yes.
   
-- Polls are useful even when they're wrong
+- [Polls are useful]{.blue} even when they're wrong
 
 
 # {{<fa magnifying-glass>}} What comes next?
 
-## What comes next?
+## What comes next? {.smaller}
 
 - A lot depends on the House
 
-- Congress has several biases toward the status quo and inaction (super-majoritarian Filibuster)
+- Congress biased toward the status quo (e.g. Filibuster)
   
-  - National abortion ban, 20% tariffs seem unlikely. But so did Trump's second term...
+  - National abortion ban, 20% tariffs seem unlikely. 
   
-- More worried about the Executive Branch
+- More focused about the Executive Branch
 
   - Less oversight, fewer guardrails, more particular harms (immigration, judicial appointments, civil service, foreign policy)
 
@@ -233,19 +248,21 @@ The margins can and will change when weighted against the final results
   
 ## What comes next? {.smaller}
 
-- A lot depends on you
+- A lot [depends on you]{.blue}
 
-- Politics is about power
+- Politics is about [power]{.blue}
 
-- To wield power you need to win elections
+- To wield power you need to [win elections]{.blue}
 
-- Winning elections requires coalitions 
+- Winning elections requires [coalitions of different voters]{.blue}
 
-- Building coalitions requires compromise
+- Building coalitions requires [compromise]{.blue}
 
-- It's a lot of work, that often happens at a more local level
+- It's a [lot of work]{.blue}
 
-- But it's worth it. And it's more important than ever.
+- That often happens at a more [local level]{.blue} over a [long time]{.blue}
+
+- But it's worth it. And it's [more important than ever.]{.blue}
 
 
 
