@@ -1,0 +1,1599 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="dss_files/libs/clipboard/clipboard.min.js"></script>
+<script src="dss_files/libs/quarto-html/tabby.min.js"></script>
+<script src="dss_files/libs/quarto-html/popper.min.js"></script>
+<script src="dss_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="dss_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="dss_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="dss_files/libs/quarto-html/quarto-syntax-highlighting-b87080cf00c805eeaf98df19bc5235fa.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.30">
+
+  <meta name="author" content="Paul Testa">
+  <title>The Personal is Political</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="dss_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="dss_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="dss_files/libs/revealjs/dist/theme/quarto-61ed4225773b1cc7d193f2083c089e92.css">
+  <link href="dss_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="dss_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="dss_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="dss_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="dss_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="dss_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" align="left" data-background-position="90% 50%" data-background-size="40%" class="quarto-title-block center">
+  <h1 class="title">The Personal is Political</h1>
+  <p class="subtitle">Presentation for the Demography and Survey Science Team @ Meta</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Paul Testa 
+</div>
+</div>
+</div>
+
+  <p class="date">Jul 25, 2025</p>
+</section>
+<section>
+<section id="overview" class="title-slide slide level1 inverse center">
+<h1>Overview</h1>
+
+</section>
+<section id="about-me" class="slide level2 smaller" data-background-image="figures/profile.png" data-background-size="cover" data-background-opacity=".10">
+<h2>About me</h2>
+<ul>
+<li class="fragment"><p>How do citizens learn about politics through:</p>
+<ul>
+<li class="fragment">Personal experience</li>
+<li class="fragment">Vicarious interactions</li>
+<li class="fragment">Mediated communications</li>
+</ul></li>
+<li class="fragment"><p>What role does evidence play in polic-ymaking and public discourse?</p></li>
+<li class="fragment"><p><span class="blue">Bring the dynamics of choice into survey experiment design and analysis</span></p></li>
+<li class="fragment"><p>Teach courses on:</p>
+<ul>
+<li class="fragment">Public opinion</li>
+<li class="fragment">Race and criminal justice,</li>
+<li class="fragment">Applied statistics</li>
+</ul></li>
+<li class="fragment"><p>Oversee the Taubman Poll</p></li>
+</ul>
+</section>
+<section id="plan-for-today" class="slide level2 smaller">
+<h2>Plan for today</h2>
+<p>The Personal is Political: Assessing the Effects of Personal Narratives on Public Opinion (co-authored with Marie Schenk and Kristen Essel)</p>
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li class="fragment"><p><span class="blue">Motivation:</span> Can sharing personal experiences with abortion change public attitudes about this issue?</p></li>
+<li class="fragment"><p><span class="blue">Why choice matters for answering this question</span></p></li>
+<li class="fragment"><p>Design and measurement</p></li>
+<li class="fragment"><p>Results: <span class="blue">Paradox of persuasion</span></p></li>
+<li class="fragment"><p>Broader implications</p></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<p><img data-src="figures/apr.png"></p>
+</div></div>
+</section></section>
+<section>
+<section id="motivation" class="title-slide slide level1 inverse center">
+<h1>Motivation</h1>
+
+</section>
+<section id="context" class="slide level2 smaller">
+<h2>Context</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li class="fragment"><p><em>Dobbs v. Jackson Women’s Health Organization (2022)</em></p></li>
+<li class="fragment"><p>The future of abortion in the U.S. has never been more uncertain – or more contested</p></li>
+<li class="fragment"><p>Outpouring of legislation, mobilization, and <span class="blue">public discourse</span></p></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<p><img data-src="https://www.americanprogress.org/wp-content/uploads/sites/2/2022/06/GettyImages-1404905148.jpg"> <a href="https://www.americanprogress.org/article/in-dobbs-by-overturning-roe-and-denying-the-right-to-an-abortion-the-supreme-court-has-attacked-freedom/" target="_blank">(Source: Getty)</a></p>
+</div></div>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="columns">
+<div class="column">
+<p><img data-src="figures/wapo.png"></p>
+</div><div class="column">
+<p><img data-src="figures/pp1.png"> <img data-src="figures/pp2.png"></p>
+</div></div>
+</section></section>
+<section>
+<section id="section-1" class="title-slide slide level1 inverse center">
+<h1></h1>
+<p><span class="big-text">Can sharing personal experiences with abortion change public attitudes about this issue?</span></p>
+</section>
+<section id="our-argument" class="slide level2 smaller">
+<h2>Our argument</h2>
+<ul>
+<li class="fragment"><p>Citizens <span class="blue">understand politics</span> through the lens of <span class="blue">personal experience</span></p></li>
+<li class="fragment"><p>Personal experiences are <span class="blue">more persuasive</span> than general arguments</p></li>
+<li class="fragment"><p>Abortion attitudes are <span class="blue">hard to change</span> but …</p></li>
+<li class="fragment"><p>Personal narratives are <span class="blue">potentially persuasive</span></p></li>
+<li class="fragment"><p>Persuasion depends on both <span class="blue">reception and response</span> to messages</p></li>
+</ul>
+</section>
+<section id="the-personal-is-political" class="slide level2 smaller">
+<h2>The personal is political</h2>
+<ul>
+<li class="fragment"><p>Citizens <span class="blue">learn about politics</span> through their <span class="blue">personal experiences</span></p>
+<ul>
+<li class="fragment">Policy feedback <span class="citation" data-cites="Campbell2012-ue Lerman2017-xx Weaver2019-kh">(<a href="#/references" role="doc-biblioref" onclick="">Campbell 2012</a>; <a href="#/references" role="doc-biblioref" onclick="">Lerman and McCabe 2017</a>; <a href="#/references" role="doc-biblioref" onclick="">Weaver, Prowse, and Piston 2019</a>)</span>;</li>
+<li class="fragment">Deliberative democracy <span class="citation" data-cites="Mansbridge1999-kk Cramer_Walsh2004-jn">(<a href="#/references" role="doc-biblioref" onclick="">Mansbridge 1999</a>; <a href="#/references" role="doc-biblioref" onclick="">Cramer Walsh 2004</a>)</span></li>
+<li class="fragment">Political knowledge <span class="citation" data-cites="Cramer2017-zb">(<a href="#/references" role="doc-biblioref" onclick="">Cramer and Toff 2017</a>)</span></li>
+</ul></li>
+<li class="fragment"><p><span class="blue">Personal narratives</span> can be a <span class="blue">powerful rhetorical frame</span></p>
+<ul>
+<li class="fragment"><p>Narrative frames are easier to understand <span class="citation" data-cites="Bilandzic2013-nk">(<a href="#/references" role="doc-biblioref" onclick="">Bilandzic and Busselle 2013</a>)</span></p></li>
+<li class="fragment"><p>Episodic structure more emotionally engaging <span class="citation" data-cites="Gross2008-gf">(<a href="#/references" role="doc-biblioref" onclick="">Gross 2008</a>)</span></p></li>
+</ul></li>
+</ul>
+</section>
+<section id="abortion-is-an-easy-issue" class="slide level2 smaller">
+<h2>Abortion is an “Easy Issue”</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li class="fragment"><p>Abortion is an <span class="blue">“Easy Issue”</span> … <span class="fragment">in that it’s not hard for people to form <span class="blue">strong opinions</span> <span class="citation" data-cites="Carmines1980-aw">(<a href="#/references" role="doc-biblioref" onclick="">Carmines and Stimson 1980</a>)</span></span></p>
+<ul>
+<li class="fragment">Gender, religion, partisanship, core values, … <span class="citation" data-cites="Jelen2003-ox">(<a href="#/references" role="doc-biblioref" onclick="">Jelen and Wilcox 2003</a>)</span></li>
+</ul></li>
+<li class="fragment"><p><span class="blue">Persuasion</span> on abortion <span class="blue">should be difficult</span></p>
+<ul>
+<li class="fragment">People are more likely to change one’s vote <span class="citation" data-cites="Arceneaux2008-vf">(<a href="#/references" role="doc-biblioref" onclick="">Arceneaux 2008</a>)</span> or partisanship <span class="citation" data-cites="Carsey2006-hf">(<a href="#/references" role="doc-biblioref" onclick="">Carsey and Layman 2006</a>)</span></li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<p><img data-src="figures/gallup.png"></p>
+<p><a href="https://news.gallup.com/poll/1576/abortion.aspx" target="_blank">(Source: Gallup)</a></p>
+</div></div>
+</section>
+<section id="abortion-is-an-easy-issue-1" class="slide level2 smaller">
+<h2>Abortion is an “Easy Issue”</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div>
+<ul>
+<li><p>Abortion is an <span class="blue">“Easy Issue”</span> … in that it’s not hard for people to form <span class="blue">strong opinions</span> <span class="citation" data-cites="Carmines1980-aw">(<a href="#/references" role="doc-biblioref" onclick="">Carmines and Stimson 1980</a>)</span></p>
+<ul>
+<li>Gender, religion, partisanship, core values, … <span class="citation" data-cites="Jelen2003-ox">(<a href="#/references" role="doc-biblioref" onclick="">Jelen and Wilcox 2003</a>)</span></li>
+</ul></li>
+<li><p><span class="blue">Persuasion</span> on abortion <span class="blue">should be difficult</span></p>
+<ul>
+<li>People are more likely to change one’s vote <span class="citation" data-cites="Arceneaux2008-vf">(<a href="#/references" role="doc-biblioref" onclick="">Arceneaux 2008</a>)</span> or partisanship <span class="citation" data-cites="Carsey2006-hf">(<a href="#/references" role="doc-biblioref" onclick="">Carsey and Layman 2006</a>)</span></li>
+</ul></li>
+<li><p>Yet <span class="blue">aggregate stability</span> can <span class="blue">mask individual change</span></p>
+<ul>
+<li>Most people are ambivalent, holding a mix of pro-choice and pro-life views <span class="citation" data-cites="Cook2019-fd">(<a href="#/references" role="doc-biblioref" onclick="">Cook, Wilcox, and Jelen 2019</a>)</span></li>
+</ul></li>
+</ul>
+</div>
+</div><div class="column" style="width:40%;">
+<p><img data-src="figures/cces_abortion_alluvial.jpeg"></p>
+</div></div>
+</section>
+<section id="why-personal-narratives-might-persuade" class="slide level2 smaller">
+<h2>Why personal narratives might persuade</h2>
+<ul>
+<li class="fragment"><p>Some evidence from <span class="blue">observational studies</span> that personal narratives</p>
+<ul>
+<li class="fragment">Reduce stigma <span class="citation" data-cites="Cockrill2018-ul">(<a href="#/references" role="doc-biblioref" onclick="">Cockrill and Biggs 2018</a>)</span></li>
+<li class="fragment">Elicit more positive comments on YouTube <span class="citation" data-cites="Kubin2021-fq">(<a href="#/references" role="doc-biblioref" onclick="">Kubin et al. 2021</a>)</span></li>
+</ul></li>
+<li class="fragment"><p>But <span class="blue">experimental results</span> are more mixed</p>
+<ul>
+<li class="fragment">Null results from:
+<ul>
+<li class="fragment">Deep canvassing <span class="citation" data-cites="Broockman2017-rd">(<a href="#/references" role="doc-biblioref" onclick="">Broockman, Kalla, and Sekhon 2017</a>)</span></li>
+<li class="fragment">Narrative stories at Planned Parenthood <span class="citation" data-cites="Sackeim2020-qo">(<a href="#/references" role="doc-biblioref" onclick="">Sackeim et al. 2020</a>)</span></li>
+</ul></li>
+<li class="fragment">Effects for individually tailored arguments <span class="citation" data-cites="Kalla2022-if">(<a href="#/references" role="doc-biblioref" onclick="">Kalla, Levine, and Broockman 2022</a>)</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="persuasion-and-choice" class="slide level2 smaller">
+<h2>Persuasion and choice</h2>
+<ul>
+<li class="fragment"><p><span class="citation" data-cites="Zaller1992-oq">Zaller (<a href="#/references" role="doc-biblioref" onclick="">1992</a>)</span> Receive-Accept-Sample model of opinion formation</p>
+<ul>
+<li class="fragment"><p>Attitude formation depends on <span class="blue">both the reception and response to information</span></p></li>
+<li class="fragment"><p>Typically only study one aspect of this dynamic</p></li>
+</ul></li>
+<li class="fragment"><p>Dynamics of <span class="blue">choice and self-selection</span> are ever-present in everyday life, but <span class="blue">absent in most studies</span> of persuasion</p></li>
+<li class="fragment"><p>When reception predicts response, <span class="blue">this is a problem</span></p></li>
+</ul>
+</section></section>
+<section>
+<section id="section-2" class="title-slide slide level1 inverse center">
+<h1></h1>
+<p><span class="big-text">How should we study the effects of sharing personal experiences on attitudes about abortion?</span></p>
+</section>
+<section id="the-standard-approach" class="slide level2">
+<h2>The standard approach:</h2>
+<div class="{columns}">
+<div class="column" style="width:30%;">
+<ul>
+<li class="fragment"><p>Want to know the effect of a message?</p></li>
+<li class="fragment"><p><span class="blue">Do an experiment!</span></p></li>
+</ul>
+</div><div class="column" style="width:70%;">
+<div class="fragment">
+<p><img data-src="figures/apr-design-standard.png"></p>
+</div>
+</div></div>
+</section>
+<section id="the-problem" class="slide level2 smaller">
+<h2>The problem</h2>
+<ul>
+<li class="fragment"><p><span class="blue">Average Treatment Effects</span> (<span class="math inline">\(ATE\)</span>s) tell us the effect <span class="blue">if everyone were to receive the treatment</span></p></li>
+<li class="fragment"><p>We can think of it as a <span class="blue">weighted average</span> of the effects among those <span class="blue">likely and unlikely to encounter the treatment</span></p></li>
+<li class="fragment"><p>When treatment effects vary depending on who receives the message, the <span class="blue"><span class="math inline">\(ATE\)</span> can be misleading</span></p>
+<ul>
+<li class="fragment">Example: The same message delivered on <span class="blue">Fox News vs.&nbsp;MSNBC</span></li>
+</ul></li>
+</ul>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:45%;">
+<p><img data-src="https://variety.com/wp-content/uploads/2017/10/laura-ingraham.jpg"></p>
+</div><div class="column" style="width:45%;">
+<p><img data-src="https://nypost.com/wp-content/uploads/sites/2/2022/07/Rachel-Maddow_01.jpg"></p>
+</div></div>
+</div>
+</section>
+<section id="the-problem-1" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">The problem</h2>
+<p>People <span class="blue">likely to hear stories</span> about abortion may be <span class="blue">more receptive</span> or may have <span class="blue">already internalized</span> the message</p>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><strong>Likely:</strong> +/0</p>
+<div style="text-align: center;">
+<p><img src="figures/prochoice.jpg" style="width: 100%;"></p>
+</div>
+</div><div class="column" style="width:30%;">
+
+</div><div class="column" style="width:30%;">
+
+</div></div>
+</section>
+<section id="the-problem-2" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">The problem</h2>
+<p>The same message may have <span class="blue">no effect</span>, may <span class="blue">elicit backlash</span>, or <span class="blue">might persuade</span> an <span class="blue">unlikely audience</span>.</p>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><span class="grey"><strong>Likely:</strong> +/0</span></p>
+<div style="text-align: center;">
+<p><img src="figures/prochoice.jpg" style="opacity: 0.5; width: 100%;"></p>
+</div>
+</div><div class="column" style="width:30%;">
+
+</div><div class="column" style="width:30%;">
+<p><strong>Unlikely:</strong> -/0/+</p>
+<div style="text-align: center;">
+<p><img src="figures/prolife.jpg" style="width: 100%;"></p>
+</div>
+</div></div>
+</section>
+<section id="the-problem-3" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">The problem</h2>
+<p>The <span class="math inline">\(ATE\)</span> we estimate from a standard design depends on the <span class="blue">relative size and response</span> of these groups</p>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><span class="grey"><strong>Likely:</strong> +</span></p>
+<div style="text-align: center;">
+<p><img src="figures/prochoice.jpg" style="opacity: 0.5; width: 100%;"></p>
+</div>
+</div><div class="column" style="width:30%;">
+<p><strong>ATE</strong>: 0</p>
+<div style="text-align: center;">
+<p><img src="https://www.usatoday.com/gcdn/media/USATODAY/gameon/2012/10/27/gameday1-16_9.jpg" style="width: 100%;"></p>
+</div>
+</div><div class="column" style="width:30%;">
+<p><span class="grey"><strong>Unlikely:</strong> -</span></p>
+<div style="text-align: center;">
+<p><img src="figures/prolife.jpg" style="opacity: 0.5; width: 100%;"></p>
+</div>
+</div></div>
+<div class="fragment">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Important</strong></p>
+</div>
+<div class="callout-content">
+<p>A polarizing treatment can yield a null <span class="math inline">\(ATE\)</span> even when it produces large but opposing effects across audiences</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-solution" class="slide level2 smaller">
+<h2>The solution</h2>
+<div class="{columns}">
+<div class="column" style="width:30%;">
+<ul>
+<li class="fragment"><p>Give some people the <span class="blue">choice</span> whether to <span class="blue">receive the treatment</span></p></li>
+<li class="fragment"><p>Preference-Incorporating Choice and Assignment design (<span class="blue">PICA</span>) <span class="citation" data-cites="De_Benedictis-Kessner2019-kg">(<a href="#/references" role="doc-biblioref" onclick="">De Benedictis-Kessner et al. 2019</a>)</span></p></li>
+</ul>
+</div><div class="column" style="width:70%;">
+<div class="fragment">
+<p><img data-src="figures/apr-design-choice.png"></p>
+</div>
+</div></div>
+</section>
+<section id="the-solution-1" class="slide level2 smaller">
+<h2>The solution</h2>
+<p>PICA designs with a binary choice allow us to <span class="blue">decompose the <span class="math inline">\(ATE\)</span></span> into the <span class="blue">Average Choice-Specific Treatment Effects</span> (<span class="math inline">\(ACTE\)</span>s) among a message’s <span class="blue">likely and unlikely audiences</span> <span class="citation" data-cites="Gaines2011-yz Knox2019-sp">(<a href="#/references" role="doc-biblioref" onclick="">Gaines and Kuklinski 2011</a>; <a href="#/references" role="doc-biblioref" onclick="">Knox et al. 2019</a>)</span></p>
+
+<img data-src="figures/apr-design-choice-wide.png" class="r-stretch"></section></section>
+<section>
+<section id="design-and-measurement" class="title-slide slide level1 inverse center">
+<h1>Design and measurement</h1>
+
+</section>
+<section id="survey-planning" class="slide level2 smaller non-incremental">
+<h2>Survey planning</h2>
+<div class="{columns}">
+<div class="column" style="width:30%;">
+<div>
+<ul>
+<li><p>Expedited review from Brown’s Institutional Review Board (#2107003049)</p></li>
+<li><p>Design pre-registered with <a href="https://osf.io/d6p47/" target="_blank">OSF</a></p></li>
+</ul>
+</div>
+</div><div class="column" style="width:70%;">
+<p><img data-src="figures/apr-design-choice.png"></p>
+</div></div>
+</section>
+<section id="section-3" class="slide level2 smaller">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:35%;">
+<h4 id="sample">Sample</h4>
+<div>
+<ul>
+<li><p>Survey fielded with Qualtrics online panel from March 15-17, 2023</p></li>
+<li><p>1,565 respondents</p></li>
+<li><p>Quota-based sampling using Census estimates of age, gender, race, household income, and education</p></li>
+</ul>
+</div>
+</div><div class="column" style="width:65%;">
+<p><img data-src="figures/fig_demo.png"></p>
+</div></div>
+</section>
+<section id="survey-instrument" class="slide level2 smaller">
+<h2>Survey Instrument</h2>
+<ul>
+<li class="fragment"><p><span class="blue">Pre-treatment:</span> demographics and baseline abortion attitudes</p></li>
+<li class="fragment"><p>Separate module on nuclear escalation</p></li>
+<li class="fragment"><p><span class="blue">PICA experiment</span></p>
+<ul>
+<li class="fragment">Forced exposure: N = 779 (Personal = 260 | General = 268 | Control = 251)</li>
+<li class="fragment">Treatment choice: N = 786 (Personal = 372 | General = 414)</li>
+</ul></li>
+<li class="fragment"><p><span class="blue">Post-treatment:</span> Outcome measures adapted from <span class="citation" data-cites="Kalla2022-if">Kalla, Levine, and Broockman (<a href="#/references" role="doc-biblioref" onclick="">2022</a>)</span></p></li>
+</ul>
+</section>
+<section id="the-choice" class="slide level2 smaller">
+<h2>The Choice</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="blue"><strong>Personal Narrative</strong></span></p>
+<p><img data-src="figures/choice-personal.png" style="width:100.0%"></p>
+<p><span class="blue"><strong>General Argument</strong></span></p>
+<p><img data-src="figures/choice-general.png" style="width:100.0%"></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/apr-design-choice.png"></p>
+</div></div>
+</section>
+<section id="the-treatments" class="slide level2">
+<h2>The Treatments</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Personal</a></li><li><a href="#tabset-1-2">General</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<p><img data-src="figures/personal_treatment.png"></p>
+</div>
+<div id="tabset-1-2">
+<p><img data-src="figures/general_treatment.png"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="outcomes" class="slide level2 smaller">
+<h2>Outcomes</h2>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Overview</a></li><li><a href="#tabset-2-2">Legal</a></li><li><a href="#tabset-2-3">Action</a></li><li><a href="#tabset-2-4">Moral</a></li><li><a href="#tabset-2-5">Affect</a></li><li><a href="#tabset-2-6">PCAs</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<div>
+<ul>
+<li><p><span class="blue">Legal-Policy</span></p>
+<ul>
+<li>PCA of three multi-item scales (6 item yes/no legal scale; 4-item policy scale, 7-point likert; 3-item ballot initiatives, 5-point likert)</li>
+<li>Pre-post change of 6-item yes/no legal</li>
+</ul></li>
+<li><p><span class="blue">Action</span></p>
+<ul>
+<li>PCA of 5-item action scale, 5-point likert</li>
+</ul></li>
+<li><p><span class="blue">Moral</span></p>
+<ul>
+<li>PCA of 5-items, 7-point likert</li>
+</ul></li>
+<li><p><span class="blue">Affect</span></p>
+<ul>
+<li>PCA of 5 abortion-related feeling thermometers (0-100)</li>
+</ul></li>
+<li><p><span class="blue">Combined omnibus measure</span></p>
+<ul>
+<li>PCA of all post-treatment measures</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="tabset-2-2">
+<p>By law, do you think women should have access to abortion if she… <em>(Yes/No)</em></p>
+<div>
+<ul>
+<li>has already been pregnant for six weeks<br>
+</li>
+<li>has already been pregnant for more than one trimester (more than 12 weeks of pregnancy)<br>
+</li>
+<li>was not using birth control<br>
+</li>
+<li>has a partner who disagrees with her decision<br>
+</li>
+<li>has already had an abortion before<br>
+</li>
+<li>wants an abortion for any reason</li>
+</ul>
+</div>
+<p>How much do you agree or disagree with the following statements regarding abortion? <em>(7-point scale: Strongly disagree – Strongly agree)</em></p>
+<div>
+<ul>
+<li>State law should require a woman to attend multiple appointments over several days in order to get an abortion.<br>
+</li>
+<li>State law should prohibit private health insurance from covering abortions.<br>
+</li>
+<li>State law should require women to receive counseling that advises childbirth over abortion.<br>
+</li>
+<li>State law should require that publicly-funded health insurance for poor people covers the cost of abortions.</li>
+</ul>
+</div>
+<p>Assume this hypothetical scenario: your state is considering a number of ballot measures during the next few years. Below are some of the ballot measures under consideration. Would you favor or oppose each ballot measure that would prohibit doctors from performing abortions on patients who are: <em>(5-point scale: Strongly oppose – Strongly favor)</em></p>
+<div>
+<ul>
+<li>beyond 20 weeks of pregnancy<br>
+</li>
+<li>beyond 15 weeks of pregnancy<br>
+</li>
+<li>beyond 6 weeks of pregnancy</li>
+</ul>
+</div>
+</div>
+<div id="tabset-2-3">
+<div>
+<p>These days people are busy and often don’t have time to do many of the things they would like to. Suppose in the next month someone asked you to engage in the following activities. How likely would you be to say yes? <em>(5-point scale: Not at all likely – Extremely likely)</em></p>
+<ul>
+<li>Volunteer for an organization that supports women who need abortions.<br>
+</li>
+<li>Accompany a friend or family member to an abortion appointment.<br>
+</li>
+<li>Protest outside an abortion clinic to show my opposition to abortion.<br>
+</li>
+<li>Call a politician to express my support for legal and available abortion.<br>
+</li>
+<li>Call a politician to express my opposition to legal and available abortion.</li>
+</ul>
+</div>
+</div>
+<div id="tabset-2-4">
+<p>How much do you agree or disagree with the following statements regarding abortion? <em>(7-point scale: Strongly disagree – Strongly agree)</em></p>
+<div>
+<ul>
+<li>Women who have had abortions have done something wrong.<br>
+</li>
+<li>Women who have had abortions should feel badly about themselves.<br>
+</li>
+<li>If a woman does not want to be pregnant, she should consider an abortion.<br>
+</li>
+<li>Given the availability of modern birth control, women who have abortions are just irresponsible.<br>
+</li>
+<li>There’s nothing wrong with having an abortion.</li>
+</ul>
+</div>
+</div>
+<div id="tabset-2-5">
+<p>Use the thermometer below to express how you feel toward the following individuals and groups. <em>0 is most cold. 100 is most warm.</em></p>
+<div>
+<ul>
+<li>Women who have had an abortion<br>
+</li>
+<li>Doctors who provide abortions<br>
+</li>
+<li>Pro-choice activists<br>
+</li>
+<li>Pro-life activists<br>
+</li>
+<li>The Supreme Court</li>
+</ul>
+</div>
+</div>
+<div id="tabset-2-6">
+<h5 id="legal-policy">Legal Policy</h5>
+<p><img data-src="figures/fig_pca_lp.png"></p>
+<h5 id="action-1">Action</h5>
+<p><img data-src="figures/fig_pca_action.png"></p>
+<h5 id="moral-1">Moral</h5>
+<p><img data-src="figures/fig_pca_moral.png"></p>
+<h5 id="feeling-thermometers">Feeling Thermometers</h5>
+<p><img data-src="figures/fig_pca_ft.png"></p>
+<h5 id="combined-omnibus-measure">Combined omnibus measure</h5>
+<p><img data-src="figures/fig_pca_combined.png"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="expectations" class="slide level2 smaller">
+<h2>Expectations</h2>
+<ul>
+<li class="fragment"><span class="blue">H1:</span> Personal narratives <span class="blue">reach a broader audience</span> than generalized accounts</li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[ATE_{H1} = E[\alpha_{\text{Personal}} \mid C=p, D=c] - E[\alpha_{\text{General}}  \mid C=g, D=c]\]</span></p>
+</div>
+</section>
+<section id="expectations-1" class="slide level2 smaller">
+<h2>Expectations</h2>
+<ul>
+<li class="fragment"><span class="blue">H2:</span> Personal narratives are <span class="blue">more effective in changing abortion attitudes</span> than more generalized arguments</li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[ATE_{\text{H2}} = E[Y \mid T=p, D=f] - E[Y \mid T=g, D=f]\]</span></p>
+</div>
+</section>
+<section id="expectations-2" class="slide level2 smaller">
+<h2>Expectations</h2>
+<ul>
+<li class="fragment"><p><span class="blue">H3:</span> The effects of each narrative <span class="blue">depend on the likelihood of engaging</span> with them.</p>
+<p>– <span class="blue">H3a:</span> Personal narratives <span class="blue">persuade both</span> their likely audience and those who might otherwise avoid them</p></li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[
+ACTE_{Likely}
+= \frac{
+\overbrace{E[Y|D=c, C=p] }^{\text{Average: Given Choice}} -
+  \overbrace{E[Y|D=f,T=c]}^{\text{Average: Assigned Control}}}
+  {\underbrace{\alpha}_{\text{Proportion Choosing to Read Personal Narrative}}}
+\]</span></p>
+<p><span class="math display">\[
+ACTE_{Unlikely}
+= \frac{
+   \overbrace{E[Y|D=f,T=p]}^{\text{Average: Assigned Personal}} -
+\overbrace{E[Y|D=c, C = p] }^{\text{Average: Given Choice}}}
+  {\underbrace{(1-\alpha)}_{\text{Proportion Avoiding  Personal Narrative}}}
+\]</span></p>
+</div>
+</section>
+<section id="expectations-3" class="slide level2 smaller">
+<h2>Expectations</h2>
+<ul>
+<li class="fragment"><p><span class="blue">H3:</span> The effects of each narrative <span class="blue">depend on the likelihood of engaging</span> with them.</p>
+<p>– <span class="blue">H3b:</span> General arguments <span class="blue">persuade their likely audience</span> but may induce <span class="blue">backlash</span> among those who would <span class="blue">avoid these arguments</span>.</p></li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[
+ACTE_{Likely}
+= \frac{
+\overbrace{E[Y|D=c, C=g] }^{\text{Average: Given Choice}} -
+  \overbrace{E[Y|D=f,T=c]}^{\text{Average: Assigned Control}}}
+  {\underbrace{\alpha}_{\text{Proportion Choosing to Read General Argument}}}
+\]</span></p>
+<p><span class="math display">\[
+ACTE_{Unlikely}
+= \frac{
+   \overbrace{E[Y|D=f,T=g]}^{\text{Average: Assigned General}} -
+\overbrace{E[Y|D=c, C = g] }^{\text{Average: Given Choice}}}
+  {\underbrace{(1-\alpha)}_{\text{Proportion Avoiding General Argument}}}
+\]</span></p>
+</div>
+</section>
+<section id="power-analyses" class="slide level2 smaller">
+<h2>Power analyses</h2>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Summary</a></li><li><a href="#tabset-3-2">H1</a></li><li><a href="#tabset-3-3">H2</a></li><li><a href="#tabset-3-4">H3 – Low</a></li><li><a href="#tabset-3-5">H3 – High</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<div>
+<p>With a total sample size of 1,500 (split between forced exposure and treatment choice conditions), our design is powered at 80% (with a two-tailed <span class="math inline">\(\alpha = 0.05\)</span>) to detect the following minimum effect sizes:</p>
+<ul>
+<li><span class="blue">H1:</span> 0.10<br>
+</li>
+<li><span class="blue">H2:</span> 0.25<br>
+</li>
+<li><span class="blue">H3:</span>
+<ul>
+<li>0.70 when one-third of respondents select into treatment<br>
+</li>
+<li>0.35 when two-thirds of respondents select into treatment</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="tabset-3-2">
+<p><img data-src="figures/fig_power_h1-1.png"></p>
+</div>
+<div id="tabset-3-3">
+<p><img data-src="figures/fig_power_h2-1.png"></p>
+</div>
+<div id="tabset-3-4">
+<p><img data-src="figures/fig_power_h3_few-1.png"></p>
+</div>
+<div id="tabset-3-5">
+<p><img data-src="figures/fig_power_h3_many-1.png"></p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="results" class="title-slide slide level1 inverse center">
+<h1>Results</h1>
+
+</section>
+<section id="summary-1" class="slide level2">
+<h2>Summary</h2>
+<ul>
+<li class="fragment"><p>Personal narratives <span class="blue">reach a broader audience</span> than general arguments (H1)</p>
+<ul>
+<li class="fragment"><span class="blue">No single factor</span> predicts <span class="blue">who engages</span> with a message</li>
+</ul></li>
+<li class="fragment"><p><span class="blue">Personal narratives</span> are effective at <span class="blue">changing abortion attitudes</span>…</p></li>
+<li class="fragment"><p>…but only among respondents <span class="blue">who would otherwise avoid such stories</span> (H2/H3)</p></li>
+<li class="fragment"><p>General arguments are <span class="blue">generally unpersuasive</span> (H2/H3)</p></li>
+</ul>
+</section>
+<section id="section-4" class="slide level2">
+<h2></h2>
+<h4 id="personal-narratives-reach-a-broader-audience-than-more-general-arguments">Personal narratives reach a broader audience than more general arguments</h4>
+
+<img data-src="figures/fig_h1.png" class="r-stretch"></section>
+<section id="section-5" class="slide level2">
+<h2></h2>
+<h4 id="no-single-factor-predicts-who-engages-with-a-message">No single factor predicts who engages with a message</h4>
+
+<img data-src="figures/fig_h1_diff.png" class="r-stretch"></section>
+<section id="paradox-of-persuasion" class="slide level2">
+<h2>Paradox of Persuasion</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Personal narratives are most persuasive among those least likely to hear them</p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/fig_h3_1.png"></p>
+</div></div>
+</section>
+<section id="section-6" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<h4 id="personal-narratives-are-most-persuasive-among-those-least-likely-to-hear-them">Personal narratives are most persuasive among those least likely to hear them</h4>
+
+<img data-src="figures/fig_h3_2b.png" class="r-stretch"></section>
+<section id="section-7" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<h4 id="personal-narratives-are-most-persuasive-among-those-least-likely-to-hear-them-1">Personal narratives are most persuasive among those least likely to hear them</h4>
+
+<img data-src="figures/fig_h3_2a.png" class="r-stretch"></section>
+<section id="section-8" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<h4 id="general-appeals-are-generally-unpersuasive">General appeals are generally unpersuasive</h4>
+
+<img data-src="figures/fig_h3_3.png" class="r-stretch"></section></section>
+<section>
+<section id="implications-limitations-and-broader-applications" class="title-slide slide level1 inverse center">
+<h1>Implications, limitations, and broader applications</h1>
+
+</section>
+<section id="implications" class="slide level2">
+<h2>Implications</h2>
+<ul>
+<li class="fragment"><p>Reading a <span class="blue">personal narratives</span> about abortion is <span class="blue">persuasive</span></p></li>
+<li class="fragment"><p>But primarily <span class="blue">among those who would otherwise avoid them</span></p>
+<ul>
+<li class="fragment">Standard experimental designs – even with subgroup analyses – would miss these dynamics</li>
+</ul></li>
+<li class="fragment"><p><span class="blue">Understanding persuasion</span> requires us to study both the <span class="blue">reception and response</span> to messages</p></li>
+</ul>
+</section>
+<section id="limitations" class="slide level2 smaller">
+<h2>Limitations</h2>
+<ul>
+<li class="fragment"><p>It is <span class="blue">difficult to perfectly recreate</span> the choices people face</p>
+<ul>
+<li class="fragment">Binary choice vs.&nbsp;multiple options</li>
+<li class="fragment">Some choices are made for us</li>
+</ul></li>
+<li class="fragment"><p>Just because <span class="blue">this personal narrative</span> was persuasive <span class="blue">doesn’t mean all narratives are</span></p></li>
+<li class="fragment"><p>Use caution when interpreting results from a <span class="blue">single study</span></p>
+<ul>
+<li class="fragment">Duration of effects, competing messages, different messengers, different contexts</li>
+</ul></li>
+</ul>
+</section>
+<section id="broader-applications" class="slide level2 smaller">
+<h2>Broader applications</h2>
+<ul>
+<li class="fragment"><p>Incorporating choice into experimental designs allows us to ask and answer a broader range of questions of interest to academics, activists, organizations and anyone trying to reach a particular or multiple audiences.</p></li>
+<li class="fragment"><p>Once you bring choice into a design, there’s so much more you can do:</p>
+<ul>
+<li class="fragment"><span class="blue">Randomize the choice people get</span>
+<ul>
+<li class="fragment">Binary choice vs.&nbsp;multiple options</li>
+<li class="fragment">Messenger and format</li>
+</ul></li>
+<li class="fragment"><span class="blue">Randomize the information provided</span>
+<ul>
+<li class="fragment">Pro vs con</li>
+<li class="fragment">Expected vs unexpected messages</li>
+</ul></li>
+<li class="fragment"><span class="blue">Randomize conditional on choice</span>
+<ul>
+<li class="fragment">Could a different message persuade a skeptical audience?</li>
+</ul></li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="thank-you" class="title-slide slide level1 inverse center">
+<h1>Thank you</h1>
+
+</section>
+<section id="references" class="slide level2 smaller scrollable">
+<h2>References</h2>
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Arceneaux2008-vf" class="csl-entry" role="listitem">
+Arceneaux, K. 2008. <span>“<span>Can Partisan Cues Diminish Democratic Accountability?</span>”</span> <em>Political Behavior</em> 30 (2): 139–60.
+</div>
+<div id="ref-Bilandzic2013-nk" class="csl-entry" role="listitem">
+Bilandzic, and Busselle. 2013. <span>“<span class="nocase">Narrative persuasion</span>.”</span> <em>The Sage Handbook of Persuasion</em>.
+</div>
+<div id="ref-Broockman2017-rd" class="csl-entry" role="listitem">
+Broockman, David E, Joshua L Kalla, and Jasjeet S Sekhon. 2017. <span>“<span class="nocase">The Design of Field Experiments With Survey Outcomes: A Framework for Selecting More Efficient, Robust, and Ethical Designs</span>.”</span> <em>Political Analysis: An Annual Publication of the Methodology Section of the American Political Science Association</em> 25 (4): 435–64.
+</div>
+<div id="ref-Campbell2012-ue" class="csl-entry" role="listitem">
+Campbell, Andrea Louise. 2012. <span>“<span class="nocase">Policy makes mass politics</span>.”</span> <em>Annual Review of Political Science</em>.
+</div>
+<div id="ref-Carmines1980-aw" class="csl-entry" role="listitem">
+Carmines, E G, and J A Stimson. 1980. <span>“<span class="nocase">The two faces of issue voting</span>.”</span> <em>American Political Science Review</em>, 78–91.
+</div>
+<div id="ref-Carsey2006-hf" class="csl-entry" role="listitem">
+Carsey, Thomas M, and Geoffrey C Layman. 2006. <span>“<span class="nocase">Changing sides or changing minds? Party identification and policy preferences in the American electorate</span>.”</span> <em>American Journal of Political Science</em> 50 (2): 464–77.
+</div>
+<div id="ref-Cockrill2018-ul" class="csl-entry" role="listitem">
+Cockrill, Kate, and Antonia Biggs. 2018. <span>“<span class="nocase">Can stories reduce abortion stigma? Findings from a longitudinal cohort study</span>.”</span> <em>Culture, Health &amp; Sexuality</em> 20 (3): 335–50.
+</div>
+<div id="ref-Cook2019-fd" class="csl-entry" role="listitem">
+Cook, Elizabeth Adell, Clyde Wilcox, and Ted G Jelen. 2019. <em><span class="nocase">Between Two Absolutes Public Opinion and the Politics of Abortion</span></em>. New York: Routledge.
+</div>
+<div id="ref-Cramer2017-zb" class="csl-entry" role="listitem">
+Cramer, Katherine J, and Benjamin Toff. 2017. <span>“<span class="nocase">The Fact of Experience: Rethinking Political Knowledge and Civic Competence</span>.”</span> <em>Perspectives on Politics</em> 15 (3): 754–70.
+</div>
+<div id="ref-Cramer_Walsh2004-jn" class="csl-entry" role="listitem">
+Cramer Walsh, Katherine. 2004. <em><span class="nocase">Talking about politics: Informal groups and social identity in American life</span></em>. Chicago: University of Chicago Press.
+</div>
+<div id="ref-De_Benedictis-Kessner2019-kg" class="csl-entry" role="listitem">
+De Benedictis-Kessner, Justin, Matthew A Baum, Adam J Berinsky, and Teppei Yamamoto. 2019. <span>“<span class="nocase">Persuading the Enemy: Estimating the Persuasive Effects of Partisan Media with the Preference-Incorporating Choice and Assignment Design</span>.”</span> <em>American Political Science Review</em> 113 (4): 902–16.
+</div>
+<div id="ref-Gaines2011-yz" class="csl-entry" role="listitem">
+Gaines, Brian J, and James H Kuklinski. 2011. <span>“<span class="nocase">Experimental Estimation of Heterogeneous Treatment Effects Related to Self-Selection</span>.”</span> <em>American Journal of Political Science</em> 55 (3): 724–36.
+</div>
+<div id="ref-Gross2008-gf" class="csl-entry" role="listitem">
+Gross, Kimberly. 2008. <span>“<span class="nocase">Framing persuasive appeals: Episodic and thematic framing, emotional response, and policy opinion</span>.”</span> <em>Political Psychology</em> 29 (2): 169–92.
+</div>
+<div id="ref-Jelen2003-ox" class="csl-entry" role="listitem">
+Jelen, Ted G, and Clyde Wilcox. 2003. <span>“<span class="nocase">Causes and Consequences of Public Attitudes Toward Abortion: A Review and Research Agenda</span>.”</span> <em>Political Research Quarterly</em> 56 (4): 489–500.
+</div>
+<div id="ref-Kalla2022-if" class="csl-entry" role="listitem">
+Kalla, Joshua L, Adam Seth Levine, and David E Broockman. 2022. <span>“<span class="nocase">Personalizing Moral Reframing in Interpersonal Conversation: A Field Experiment</span>.”</span> <em>The Journal of Politics</em> 84 (2): 1239–43.
+</div>
+<div id="ref-Knox2019-sp" class="csl-entry" role="listitem">
+Knox, Dean, Teppei Yamamoto, Matthew A Baum, and Adam J Berinsky. 2019. <span>“<span class="nocase">Design, Identification, and Sensitivity Analysis for Patient Preference Trials</span>.”</span> <em>Journal of the American Statistical Association</em> 114 (528): 1532–46.
+</div>
+<div id="ref-Kubin2021-fq" class="csl-entry" role="listitem">
+Kubin, Emily, Curtis Puryear, Chelsea Schein, and Kurt Gray. 2021. <span>“<span class="nocase">Personal experiences bridge moral and political divides better than facts</span>.”</span> <em>Proceedings of the National Academy of Sciences of the United States of America</em> 118 (6).
+</div>
+<div id="ref-Lerman2017-xx" class="csl-entry" role="listitem">
+Lerman, Amy E, and Katherine T McCabe. 2017. <span>“<span class="nocase">Personal experience and public opinion: A theory and test of conditional policy feedback</span>.”</span> <em>The Journal of Politics</em> 79 (2): 624–41.
+</div>
+<div id="ref-Mansbridge1999-kk" class="csl-entry" role="listitem">
+Mansbridge, Jane. 1999. <span>“<span class="nocase">Everyday Talk in the Deliberative System</span>.”</span> In <em><span class="nocase">Deliberative Politics: Essays on Democracy and Disagreement</span></em>, edited by Stephen Macedo, 1–211. Oxford University Press.
+</div>
+<div id="ref-Sackeim2020-qo" class="csl-entry" role="listitem">
+Sackeim, M, S Newton, S Y Lee, D Lauderdale, and M Gilliam. 2020. <span>“<span class="nocase">O6 A narrative intervention to decrease individual level abortion stigma: A randomized controlled trial</span>.”</span> <em>Contraception</em> 102 (4): 275.
+</div>
+<div id="ref-Weaver2019-kh" class="csl-entry" role="listitem">
+Weaver, Vesla, Gwen Prowse, and Spencer Piston. 2019. <span>“<span class="nocase">Too much knowledge, too little power: An assessment of political knowledge in highly policed communities</span>.”</span> <em>The Journal of Politics</em> 81 (3): 1153–66.
+</div>
+<div id="ref-Zaller1992-oq" class="csl-entry" role="listitem">
+Zaller, John R. 1992. <em><span class="nocase">The Nature and Origins of Mass Opinion</span></em>. Cambridge: Cambridge University Press.
+</div>
+</div>
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p>DSS</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="dss_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="dss_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="dss_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="dss_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="dss_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="dss_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="dss_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="dss_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="dss_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="dss_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="dss_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'fade',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>

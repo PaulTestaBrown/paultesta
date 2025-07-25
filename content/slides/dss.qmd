@@ -24,7 +24,6 @@ format:
     # include-after-body: title-slide.html
     title-slide-attributes:
       align: left
-      data-background-image: images/10_elect.png
       data-background-position: 90% 50%
       data-background-size: 40%
 filters:
