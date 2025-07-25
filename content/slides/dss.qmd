@@ -62,7 +62,7 @@ library(texreg)
   - Vicarious interactions
   - Mediated communications
 
-- What role does evidence play in polic-ymaking and public discourse?
+- What role does evidence play in policy-making and public discourse?
 
 - [Bring the dynamics of choice into survey experiment design and analysis]{.blue}
 
