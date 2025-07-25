@@ -1,0 +1,69 @@
+/*-- scss:defaults --*/
+
+// Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap');
+
+$font-family-sans-serif: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+$font-family-monospace: 'Courier New', monospace;
+
+$maincol: #06182c;
+$inverse-bg: #155dc9;
+$accent1: #05508d;
+$accent2: #ced0d4	;
+
+$presentation-heading-color: $maincol !default;
+$body-color: $maincol !default;
+$link-color: $accent2 !default;
+
+/*-- scss:rules --*/
+
+#title-slide {
+  text-align: left;
+  .title {
+    color: $body-color;
+    font-size: 1.5em;
+    // font-weight: 350;
+    font-weight: heavier;
+  }
+
+  .subtitle {
+    color: $accent1;
+    font-style: italic;
+    margin-top: 0em;
+    font-weight: lighter;
+  }
+  .date {
+    color: $accent2;
+    font-size: .75em;
+  }
+}
+
+
+
+.inverse{
+   color: #d6d6d6;
+  h1, h2, h3 {
+    color: #f3f3f3;
+  }
+  .slide-background-content {
+    background-color: $inverse-bg;
+  }
+}
+
+.big-text {
+  font-size: 3.5rem; /* or larger if needed */
+  font-weight: bold;
+    color: #f3f3f3;
+  margin: 1em 0;
+  text-align: center;
+}
+
+.blue {
+  color: $accent1;
+  font-weight: bold;
+}
+
+.grey  {
+  color: $accent2;
+  font-weight: bold;
+}

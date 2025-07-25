@@ -1,0 +1,970 @@
+---
+title: "The Personal is Political"
+subtitle: "Presentation for the Demography and Survey Science Team @ Meta"
+author: "Paul Testa"
+date: last-modified
+date-format: "MMM D, YYYY"
+bibliography: paperpile.bib
+format: 
+  revealjs:
+    theme: [default, dssslides.scss]
+    footer: "DSS"
+    multiplex: false
+    transition: fade
+    slide-number: c
+    incremental: true
+    center: false
+    menu: true
+    scrollable: true
+    highlight-style: github
+    html-math-method: mathjax
+    progress: true
+    code-overflow: wrap
+    chalkboard: true
+    # include-after-body: title-slide.html
+    title-slide-attributes:
+      align: left
+      data-background-image: images/10_elect.png
+      data-background-position: 90% 50%
+      data-background-size: 40%
+filters:
+  - openlinksinnewpage
+execute: 
+  eval: true
+  echo: true
+  warning: false
+  message: false
+  cache: true
+---
+
+
+```{r}
+#| label: init
+#| echo: false
+#| results: hide
+#| warning: false 
+#| message: false
+
+library(tidyverse)
+library(labelled)
+library(haven)
+library(DeclareDesign)
+library(easystats)
+library(texreg)
+
+```
+
+# Overview{.inverse}
+
+## About me{.smaller .slide background-image="figures/profile.png" background-size="cover" background-opacity=.10}
+
+- How do citizens learn about politics through:
+  - Personal experience
+  - Vicarious interactions
+  - Mediated communications
+
+- What role does evidence play in polic-ymaking and public discourse?
+
+- [Bring the dynamics of choice into survey experiment design and analysis]{.blue}
+
+- Teach courses on: 
+  - Public opinion
+  - Race and criminal justice, 
+  - Applied statistics 
+
+- Oversee the Taubman Poll
+
+
+## Plan for today{.smaller}
+
+The Personal is Political: Assessing the Effects of Personal Narratives on Public Opinion (co-authored with Marie Schenk and Kristen Essel)
+
+:::: columns
+
+:::{.column width=55%}
+
+- [Motivation:]{.blue} Can sharing personal experiences with abortion change public attitudes about this issue?
+
+- [Why choice matters for answering this question]{.blue}
+
+- Design and measurement
+
+- Results: [Paradox of persuasion]{.blue}
+
+- Broader implications
+
+:::
+
+:::{.column width=45%}
+
+![](figures/apr.png)
+
+:::
+
+::::
+
+
+# Motivation{.inverse}
+
+## Context {.smaller}
+
+:::: columns
+
+:::{.column width="60%"}
+
+- *Dobbs v. Jackson Women’s Health Organization (2022)*
+
+- The future of abortion in the U.S. has never been more uncertain -- or more contested
+
+- Outpouring of legislation, mobilization, and [public discourse]{.blue}
+
+:::
+
+:::{.column width="40%"}
+
+![](https://www.americanprogress.org/wp-content/uploads/sites/2/2022/06/GettyImages-1404905148.jpg)
+[(Source: Getty)](https://www.americanprogress.org/article/in-dobbs-by-overturning-roe-and-denying-the-right-to-an-abortion-the-supreme-court-has-attacked-freedom/)
+:::
+
+::::
+
+## 
+
+:::: columns
+
+:::{.column}
+
+![](figures/wapo.png)
+
+:::
+
+:::{.column}
+
+![](figures/pp1.png)
+![](figures/pp2.png)
+
+
+:::
+
+::::
+
+# {.inverse}
+
+[Can sharing personal experiences with abortion change public attitudes about this issue?]{.big-text}
+
+
+
+## Our argument {.smaller}
+
+- Citizens [understand politics]{.blue} through the lens of [personal experience]{.blue}
+
+- Personal experiences are [more persuasive]{.blue} than general arguments
+
+- Abortion attitudes are [hard to change]{.blue} but ...
+
+- Personal narratives are [potentially persuasive]{.blue}
+
+- Persuasion depends on both [reception and response]{.blue} to messages
+
+
+## The personal is political{.smaller}
+
+- Citizens [learn about politics]{.blue} through their [personal experiences]{.blue}
+
+  - Policy feedback [@Campbell2012-ue; @Lerman2017-xx; @Weaver2019-kh]; 
+  - Deliberative democracy [@Mansbridge1999-kk; @Cramer_Walsh2004-jn]
+  - Political knowledge [@Cramer2017-zb]
+
+
+- [Personal narratives]{.blue} can be a [powerful rhetorical frame]{.blue}
+
+  - Narrative frames are easier to understand [@Bilandzic2013-nk]
+  
+  - Episodic structure more emotionally engaging [@Gross2008-gf]
+  
+
+
+## Abortion is an "Easy Issue" {.smaller}
+
+:::: columns
+
+:::{.column width="60%"}
+
+- Abortion is an ["Easy Issue"]{.blue}  ... <span class="fragment">in that it's not hard for people to form [strong opinions]{.blue} [@Carmines1980-aw]</span>
+
+  - Gender, religion, partisanship, core values, ... [@Jelen2003-ox]
+
+- [Persuasion]{.blue} on abortion [should be difficult]{.blue}
+
+  - People are more likely to change one's vote [@Arceneaux2008-vf] or partisanship [@Carsey2006-hf]
+
+:::
+
+:::{.column width="40%"}
+
+![](figures/gallup.png)
+
+[(Source: Gallup)](https://news.gallup.com/poll/1576/abortion.aspx)
+
+:::
+
+::::
+
+## Abortion is an "Easy Issue" {.smaller}
+
+:::: columns
+
+:::{.column width="60%"}
+
+::: {.nonincremental}
+
+- Abortion is an ["Easy Issue"]{.blue}  ... in that it's not hard for people to form [strong opinions]{.blue} [@Carmines1980-aw]
+
+  - Gender, religion, partisanship, core values, ... [@Jelen2003-ox]
+
+- [Persuasion]{.blue} on abortion [should be difficult]{.blue}
+
+  - People are more likely to change one's vote [@Arceneaux2008-vf] or partisanship [@Carsey2006-hf]
+
+- Yet [aggregate stability]{.blue} can [mask individual change]{.blue}
+
+  - Most people are ambivalent, holding a mix of pro-choice and pro-life views [@Cook2019-fd]
+
+:::
+
+:::
+
+:::{.column width="40%"}
+
+![](figures/cces_abortion_alluvial.jpeg)
+
+
+:::
+
+::::
+
+## Why personal narratives might persuade {.smaller}
+
+- Some evidence from [observational studies]{.blue} that personal narratives
+
+  - Reduce stigma [@Cockrill2018-ul]
+  - Elicit more positive comments on YouTube [@Kubin2021-fq]
+
+- But [experimental results]{.blue} are more mixed
+
+  - Null results from: 
+    - Deep canvassing [@Broockman2017-rd]
+    - Narrative stories at Planned Parenthood [@Sackeim2020-qo]
+  - Effects for individually tailored arguments [@Kalla2022-if]
+  
+
+## Persuasion and choice{.smaller}
+
+- @Zaller1992-oq Receive-Accept-Sample model of opinion formation
+
+  - Attitude formation depends on [both the reception and response to information]{.blue}
+  
+  - Typically only study one aspect of this dynamic
+
+- Dynamics of [choice and self-selection]{.blue} are ever-present in everyday life, but [absent in most studies]{.blue} of persuasion
+  
+- When reception predicts response, [this is a problem]{.blue}
+
+
+
+# {.inverse}
+
+[How should we study the effects of sharing personal experiences on attitudes about abortion?]{.big-text}
+
+## The standard approach: 
+
+::::{columns}
+
+::: {.column width="30%"}
+
+- Want to know the effect of a message?
+
+- [Do an experiment!]{.blue}
+
+:::
+
+::: {.column width="70%"}
+
+:::{.fragment}
+
+![](figures/apr-design-standard.png)
+
+:::
+
+
+:::
+
+
+::::
+
+
+
+## The problem {.smaller}
+
+- [Average Treatment Effects]{.blue} ($ATE$s) tell us the effect [if everyone were to receive the treatment]{.blue}
+
+- We can think of it as a [weighted average]{.blue} of the effects among those [likely and unlikely to encounter the treatment]{.blue}
+
+- When treatment effects vary depending on who receives the message, the [$ATE$ can be misleading]{.blue}
+
+  - Example: The same message delivered on [Fox News vs. MSNBC]{.blue}
+
+:::::{.fragment}
+
+:::: columns
+
+
+
+:::{.column width=45%}
+
+![](https://variety.com/wp-content/uploads/2017/10/laura-ingraham.jpg)
+
+
+:::
+
+:::{.column width=45%}
+
+
+![](https://nypost.com/wp-content/uploads/sites/2/2022/07/Rachel-Maddow_01.jpg)
+
+:::
+
+::::
+
+:::::
+
+
+## The problem {.smaller auto-animate=true}
+
+People [likely to hear stories]{.blue} about abortion may be [more receptive]{.blue} or may have [already internalized]{.blue} the message
+
+:::: columns
+
+:::{.column width="30%"}
+**Likely:** +/0
+
+<div style="text-align: center;">
+  <img src="figures/prochoice.jpg" style="width: 100%;">
+</div>
+
+
+
+
+:::
+
+:::{.column width="30%"}
+
+
+
+:::
+
+:::{.column width="30%"}
+
+:::
+
+::::
+
+
+
+
+## The problem {.smaller auto-animate=true}
+
+The same message may have [no effect]{.blue}, may [elicit backlash]{.blue}, or [might persuade]{.blue} an [unlikely audience]{.blue}.
+
+:::: columns
+
+:::{.column width="30%"}
+
+[**Likely:** +/0]{.grey}
+
+<div style="text-align: center;">
+  <img src="figures/prochoice.jpg" style="opacity: 0.5; width: 100%;">
+</div>
+
+:::
+
+:::{.column width="30%"}
+
+
+
+:::
+
+:::{.column width="30%"}
+**Unlikely:** -/0/+
+
+<div style="text-align: center;">
+  <img src="figures/prolife.jpg" style="width: 100%;">
+</div>
+
+
+
+
+:::
+
+::::
+
+
+## The problem {.smaller auto-animate=true}
+
+The $ATE$ we estimate from a standard design depends on the [relative size and response]{.blue} of these groups
+
+:::: columns
+
+:::{.column width="30%"}
+
+[**Likely:** +]{.grey}
+
+<div style="text-align: center;">
+  <img src="figures/prochoice.jpg" style="opacity: 0.5; width: 100%;">
+</div>
+
+
+
+:::
+
+:::{.column width="30%"}
+
+**ATE**: 0
+
+<div style="text-align: center;">
+  <img src="https://www.usatoday.com/gcdn/media/USATODAY/gameon/2012/10/27/gameday1-16_9.jpg" style="width: 100%;">
+</div>
+
+
+
+
+:::
+
+:::{.column width="30%"}
+
+[**Unlikely:** -]{.grey}
+
+<div style="text-align: center;">
+  <img src="figures/prolife.jpg" style="opacity: 0.5; width: 100%;">
+</div>
+
+
+
+:::
+
+::::
+
+:::::{.fragment}
+
+::::{.callout-important}
+A polarizing treatment can yield a null $ATE$ even when it produces large but opposing effects across audiences
+::::
+:::::
+
+## The solution {.smaller} 
+
+::::{columns}
+
+::: {.column width="30%"}
+
+- Give some people the [choice]{.blue} whether to [receive the treatment]{.blue}
+
+- Preference-Incorporating Choice and Assignment design ([PICA]{.blue}) [@De_Benedictis-Kessner2019-kg]
+
+
+:::
+
+::: {.column width="70%"}
+
+:::{.fragment}
+
+![](figures/apr-design-choice.png)
+
+:::
+
+:::
+
+::::
+
+
+
+## The solution {.smaller}
+
+PICA designs with a binary choice allow us to [decompose the $ATE$]{.blue} into the [Average Choice-Specific Treatment Effects]{.blue} ($ACTE$s) among a message's [likely and unlikely audiences]{.blue} [@Gaines2011-yz; @Knox2019-sp]
+
+![](figures/apr-design-choice-wide.png)
+
+# Design and measurement {.inverse}
+
+## Survey planning{.smaller .non-incremental}
+
+::::{columns}
+
+::: {.column width="30%"}
+
+::: {.nonincremental}
+
+- Expedited review from Brown's Institutional Review Board (#2107003049)
+
+- Design pre-registered with [OSF](https://osf.io/d6p47/)
+
+:::
+
+:::
+
+::: {.column width="70%"}
+
+![](figures/apr-design-choice.png)
+
+:::
+
+::::
+
+
+## {.smaller}
+
+:::: columns
+
+:::{.column width="35%"}
+
+#### Sample
+
+:::{.nonincremental}
+
+- Survey fielded with Qualtrics online panel from March 15-17, 2023
+
+- 1,565 respondents
+
+- Quota-based sampling using Census estimates of age, gender, race, household income, and education
+
+:::
+
+:::
+
+:::{.column width="65%"}
+
+![](figures/fig_demo.png)
+:::
+
+::::
+
+
+## Survey Instrument {.smaller}
+
+- [Pre-treatment:]{.blue} demographics and baseline abortion attitudes
+
+- Separate module on nuclear escalation
+
+- [PICA experiment]{.blue}
+  - Forced exposure: N = 779 (Personal = 260 | General = 268 | Control = 251)
+  - Treatment choice: N = 786 (Personal = 372 | General = 414)
+
+- [Post-treatment:]{.blue} Outcome measures adapted from @Kalla2022-if
+
+
+
+## The Choice {.smaller}
+
+:::: columns
+
+:::{.column width="50%"}
+
+[**Personal Narrative**]{.blue}
+
+![](figures/choice-personal.png){width="100%"}
+
+
+[**General Argument**]{.blue}
+
+
+![](figures/choice-general.png){width="100%"}
+:::
+
+:::{.column width="50%"}
+
+![](figures/apr-design-choice.png)
+
+
+:::
+
+::::
+## The Treatments
+
+::: panel-tabset
+
+## Personal
+
+![](figures/personal_treatment.png)
+
+## General
+
+![](figures/general_treatment.png)
+
+
+:::
+
+## Outcomes {.smaller}
+
+
+
+:::: panel-tabset
+
+## Overview
+
+:::{.nonincremental}
+
+- [Legal-Policy]{.blue}
+
+  - PCA of three multi-item scales (6 item yes/no legal scale; 4-item policy scale, 7-point likert; 3-item ballot initiatives, 5-point likert)
+  - Pre-post change of 6-item yes/no legal
+
+- [Action]{.blue}
+
+  - PCA of 5-item action scale, 5-point likert
+
+- [Moral]{.blue}
+  
+  - PCA of 5-items, 7-point likert
+  
+- [Affect]{.blue}
+
+  - PCA of 5 abortion-related feeling thermometers (0-100)
+
+- [Combined omnibus measure]{.blue}
+  
+  - PCA of all post-treatment measures
+
+:::
+
+## Legal 
+
+By law, do you think women should have access to abortion if she...  *(Yes/No)*
+
+:::{.nonincremental}
+- has already been pregnant for six weeks  
+- has already been pregnant for more than one trimester (more than 12 weeks of pregnancy)  
+- was not using birth control  
+- has a partner who disagrees with her decision  
+- has already had an abortion before  
+- wants an abortion for any reason
+
+:::
+
+How much do you agree or disagree with the following statements regarding abortion? *(7-point scale: Strongly disagree – Strongly agree)*
+
+:::{.nonincremental}
+
+- State law should require a woman to attend multiple appointments over several days in order to get an abortion.  
+- State law should prohibit private health insurance from covering abortions.  
+- State law should require women to receive counseling that advises childbirth over abortion.  
+- State law should require that publicly-funded health insurance for poor people covers the cost of abortions.
+
+:::
+
+Assume this hypothetical scenario: your state is considering a number of ballot measures during the next few years.   Below are some of the ballot measures under consideration.  Would you favor or oppose each ballot measure that would prohibit doctors from performing abortions on patients who are:  *(5-point scale: Strongly oppose – Strongly favor)*
+
+:::{.nonincremental}
+
+
+
+- beyond 20 weeks of pregnancy  
+- beyond 15 weeks of pregnancy  
+- beyond 6 weeks of pregnancy
+
+:::
+
+## Action
+
+:::{.nonincremental}
+
+These days people are busy and often don’t have time to do many of the things they would like to. Suppose in the next month someone asked you to engage in the following activities.  How likely would you be to say yes?  *(5-point scale: Not at all likely – Extremely likely)*
+
+- Volunteer for an organization that supports women who need abortions.  
+- Accompany a friend or family member to an abortion appointment.  
+- Protest outside an abortion clinic to show my opposition to abortion.  
+- Call a politician to express my support for legal and available abortion.  
+- Call a politician to express my opposition to legal and available abortion.
+
+:::
+
+
+## Moral
+
+How much do you agree or disagree with the following statements regarding abortion?  *(7-point scale: Strongly disagree – Strongly agree)*
+
+:::{.nonincremental}
+
+
+- Women who have had abortions have done something wrong.  
+- Women who have had abortions should feel badly about themselves.  
+- If a woman does not want to be pregnant, she should consider an abortion.  
+- Given the availability of modern birth control, women who have abortions are just irresponsible.  
+- There’s nothing wrong with having an abortion.
+
+:::
+
+## Affect
+
+Use the thermometer below to express how you feel toward the following individuals and groups.  *0 is most cold. 100 is most warm.*
+
+:::{.nonincremental}
+
+- Women who have had an abortion  
+- Doctors who provide abortions  
+- Pro-choice activists  
+- Pro-life activists  
+- The Supreme Court
+:::
+
+## PCAs
+
+##### Legal Policy
+
+![](figures/fig_pca_lp.png)
+
+##### Action
+
+![](figures/fig_pca_action.png)
+
+##### Moral
+
+![](figures/fig_pca_moral.png)
+
+##### Feeling Thermometers
+
+![](figures/fig_pca_ft.png)
+
+##### Combined omnibus measure
+
+![](figures/fig_pca_combined.png)
+
+::::
+
+
+
+
+
+## Expectations {.smaller}
+
+- [H1:]{.blue} Personal narratives [reach a broader audience]{.blue} than generalized accounts
+
+:::{.fragment}
+$$ATE_{H1} = E[\alpha_{\text{Personal}} \mid C=p, D=c] - E[\alpha_{\text{General}}  \mid C=g, D=c]$$
+:::
+
+## Expectations {.smaller}
+
+- [H2:]{.blue} Personal narratives are [more effective in changing abortion attitudes]{.blue} than more generalized arguments
+
+:::{.fragment}
+$$ATE_{\text{H2}} = E[Y \mid T=p, D=f] - E[Y \mid T=g, D=f]$$
+:::
+
+## Expectations {.smaller}
+
+- [H3:]{.blue} The effects of each narrative [depend on the likelihood of engaging]{.blue} with them.
+
+  – [H3a:]{.blue} Personal narratives [persuade both]{.blue} their likely audience and those who might otherwise avoid them
+
+:::{.fragment}
+
+$$
+ACTE_{Likely} 
+ = \frac{
+ \overbrace{E[Y|D=c, C=p] }^{\text{Average: Given Choice}} -
+  \overbrace{E[Y|D=f,T=c]}^{\text{Average: Assigned Control}}}
+  {\underbrace{\alpha}_{\text{Proportion Choosing to Read Personal Narrative}}}
+$$  
+
+$$
+ACTE_{Unlikely} 
+ = \frac{
+   \overbrace{E[Y|D=f,T=p]}^{\text{Average: Assigned Personal}} -
+ \overbrace{E[Y|D=c, C = p] }^{\text{Average: Given Choice}}}
+  {\underbrace{(1-\alpha)}_{\text{Proportion Avoiding  Personal Narrative}}}
+$$
+:::
+
+## Expectations{.smaller}
+
+- [H3:]{.blue} The effects of each narrative [depend on the likelihood of engaging]{.blue} with them.
+
+	– [H3b:]{.blue} General arguments [persuade their likely audience]{.blue} but may induce [backlash]{.blue} among those who would [avoid these arguments]{.blue}.
+
+:::{.fragment}
+
+$$
+ACTE_{Likely} 
+ = \frac{
+ \overbrace{E[Y|D=c, C=g] }^{\text{Average: Given Choice}} -
+  \overbrace{E[Y|D=f,T=c]}^{\text{Average: Assigned Control}}}
+  {\underbrace{\alpha}_{\text{Proportion Choosing to Read General Argument}}}
+$$  
+
+$$
+ACTE_{Unlikely} 
+ = \frac{
+   \overbrace{E[Y|D=f,T=g]}^{\text{Average: Assigned General}} -
+ \overbrace{E[Y|D=c, C = g] }^{\text{Average: Given Choice}}}
+  {\underbrace{(1-\alpha)}_{\text{Proportion Avoiding General Argument}}}
+$$
+
+:::
+
+## Power analyses {.smaller}
+
+:::: panel-tabset
+
+## Summary
+
+:::{.nonincremental}
+
+With a total sample size of 1,500 (split between forced exposure and treatment choice conditions), our design is powered at 80% (with a two-tailed $\alpha = 0.05$) to detect the following minimum effect sizes:
+
+- [H1:]{.blue} 0.10  
+- [H2:]{.blue} 0.25  
+- [H3:]{.blue}  
+  - 0.70 when one-third of respondents select into treatment  
+  - 0.35 when two-thirds of respondents select into treatment
+
+:::
+
+## H1
+
+![](figures/fig_power_h1-1.png)
+
+
+## H2
+
+![](figures/fig_power_h2-1.png)
+
+
+## H3 -- Low
+
+![](figures/fig_power_h3_few-1.png)
+
+
+## H3 -- High
+
+![](figures/fig_power_h3_many-1.png)
+
+
+
+::::
+
+
+# Results{.inverse}
+
+## Summary
+
+- Personal narratives [reach a broader audience]{.blue} than general arguments (H1)
+
+  - [No single factor]{.blue} predicts [who engages]{.blue} with a message
+
+- [Personal narratives]{.blue} are effective at [changing abortion attitudes]{.blue}...
+
+- ...but only among respondents [who would otherwise avoid such stories]{.blue} (H2/H3)
+
+- General arguments are [generally unpersuasive]{.blue} (H2/H3)
+
+
+##
+#### Personal narratives reach a broader audience than more general arguments
+
+![](figures/fig_h1.png)
+
+##
+#### No single factor predicts who engages with a message
+
+![](figures/fig_h1_diff.png)
+
+## Paradox of Persuasion
+
+:::: columns
+
+:::{.column width="50%"}
+
+Personal narratives are most persuasive among those least likely to hear them
+
+:::
+
+:::{.column width="50%"}
+
+![](figures/fig_h3_1.png)
+:::
+
+::::
+
+## {auto-animate=true}
+#### Personal narratives are most persuasive among those least likely to hear them
+
+
+![](figures/fig_h3_2b.png)
+
+
+## {auto-animate=true}
+#### Personal narratives are most persuasive among those least likely to hear them
+
+
+![](figures/fig_h3_2a.png)
+
+## {auto-animate=true}
+#### General appeals are generally unpersuasive
+
+![](figures/fig_h3_3.png)
+
+
+# Implications, limitations, and broader applications {.inverse}
+
+## Implications
+
+- Reading a [personal narratives]{.blue} about abortion is [persuasive]{.blue}
+
+- But primarily [among those who would otherwise avoid them]{.blue}
+
+  - Standard experimental designs -- even with subgroup analyses -- would miss these dynamics
+
+- [Understanding persuasion]{.blue} requires us to study both the [reception and response]{.blue} to messages
+
+## Limitations {.smaller}
+
+- It is [difficult to perfectly recreate]{.blue} the choices people face
+
+  - Binary choice vs. multiple options
+  - Some choices are made for us
+
+- Just because [this personal narrative]{.blue} was persuasive [doesn’t mean all narratives are]{.blue}
+
+- Use caution when interpreting results from a [single study]{.blue}
+
+  - Duration of effects, competing messages, different messengers, different contexts
+
+
+## Broader applications{.smaller}
+
+- Incorporating choice into experimental designs allows us to ask and answer a broader range of questions of interest to academics, activists, organizations and anyone trying to reach a particular or multiple audiences.
+
+- Once you bring choice into a design, there's so much more you can do:
+  - [Randomize the choice people get]{.blue}
+    - Binary choice vs. multiple options
+    - Messenger and format
+  - [Randomize the information provided]{.blue}
+    - Pro vs con
+    - Expected vs unexpected messages
+  - [Randomize conditional on choice]{.blue}
+    - Could a different message persuade a skeptical audience?
+
+
+
+
+# Thank you{.inverse}
+
+
+
+
+
+## References
+
+
+
+
