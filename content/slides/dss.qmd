@@ -1,6 +1,6 @@
 ---
 title: "The Personal is Political"
-subtitle: "Presentation for the Demography and Survey Science Team @ Meta"
+subtitle: "Presentation for the Demography and Survey Sciences Team @ Meta"
 author: "Paul Testa"
 date: last-modified
 date-format: "MMM D, YYYY"
