@@ -1,6 +1,5 @@
 ---
-title: The Personal is Political: Assessing the Effects
-of Personal Narratives on Public Opinion
+title: "Does the Messenger Shape the Message’s Effect? Race, Black Lives Matter, and the Efficacy of Social Movement Messages"
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here 

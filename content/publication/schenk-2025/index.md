@@ -1,6 +1,6 @@
 ---
-title: The Personal is Political: Assessing the Effects
-of Personal Narratives on Public Opinion
+title: "The Personal is Political: Assessing the Effects
+of Personal Narratives on Public Opinion"
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here 
