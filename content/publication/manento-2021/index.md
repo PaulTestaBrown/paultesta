@@ -6,7 +6,7 @@ title: In Party We Trust? Voter Support for Party-Backed Candidates in Primary E
 # and it will be replaced with their full name and linked to their profile.
 authors:
 - Cory Manento
-- Paul F Testa
+- Paul F. Testa
 date: '2021-01-01'
 doi: 10.1007/s11109-020-09672-9
 
