@@ -6,7 +6,7 @@ tags:
 date: "2020-09-02T00:00:00Z"
 
 # Optional external URL for project (replaces project detail page).
-external_link: ""
+external_link: "https://pols1140.paultesta.org"
 
 image:
   caption: Photo from Wikipedia
