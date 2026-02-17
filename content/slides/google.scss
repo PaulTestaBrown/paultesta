@@ -1,0 +1,179 @@
+/*-- scss:defaults --*/
+
+/* Fonts: Google-y + clean */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Mono:wght@400;500&display=swap');
+
+$font-family-sans-serif: 'Roboto', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+$font-family-monospace: 'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+/* Core neutrals (Google UI-like) */
+$g-text: #202124;
+$g-text-muted: #5f6368;
+$g-border: #dadce0;
+$g-bg: #ffffff;
+$g-surface: #f8f9fa;
+
+/* Google brand palette (classic) */
+$g-blue: #4285F4;   /* Blue 500 */
+$g-red: #EA4335;    /* Red 500 */
+$g-yellow: #FBBC05; /* Yellow 500 */
+$g-green: #34A853;  /* Green 500 */
+
+/* Slide-level variables */
+$maincol: $g-text;
+$inverse-bg: $g-blue;
+
+/* Accent tokens (map your existing names to Google colors) */
+$accent1: $g-blue;
+$accent2: $g-text-muted;  // use gray for “quiet” accents (dates, secondary labels)
+$accent3: $g-green;
+$accent4: $g-red;
+$accent5: $g-yellow;
+
+/* Reveal / Quarto theme hooks */
+$presentation-heading-color: $maincol !default;
+$body-color: $maincol !default;
+$link-color: $g-blue !default;
+$presentation-font-size-root: 34px !default;  // slightly larger, readable
+$presentation-line-height: 1.25 !default;
+
+/*-- scss:rules --*/
+
+/* Global polish */
+.reveal {
+  background: $g-bg;
+
+  p, li {
+    color: $g-text;
+  }
+
+  .slides {
+    text-rendering: geometricPrecision;
+  }
+
+  a {
+    text-decoration: none;
+    border-bottom: 2px solid rgba(66, 133, 244, 0.25);
+  }
+  a:hover {
+    border-bottom-color: rgba(66, 133, 244, 0.60);
+  }
+
+  /* Subtle separators */
+  hr {
+    border: 0;
+    height: 2px;
+    background: $g-border;
+    opacity: 0.8;
+  }
+
+  /* Code styling */
+  code {
+    font-family: $font-family-monospace;
+    font-size: 0.9em;
+    background: $g-surface;
+    border: 1px solid $g-border;
+    border-radius: 8px;
+    padding: 0.12em 0.35em;
+  }
+
+  pre code {
+    display: block;
+    padding: 0.9em 1.0em;
+    border-radius: 14px;
+    line-height: 1.35;
+    overflow-x: auto;
+  }
+
+  /* Tables */
+  table {
+    border-collapse: collapse;
+    font-size: 0.85em;
+  }
+  th, td {
+    border: 1px solid $g-border;
+    padding: 0.35em 0.55em;
+  }
+  th {
+    background: $g-surface;
+    font-weight: 500;
+  }
+}
+
+/* Title slide */
+#title-slide {
+  text-align: left;
+
+  .title {
+    color: $g-text;
+    font-size: 1.6em;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  .subtitle {
+    color: $g-blue;
+    font-style: normal;
+    margin-top: 0.15em;
+    font-weight: 400;
+  }
+
+  .date {
+    color: $g-text-muted;
+    font-size: 0.80em;
+  }
+}
+
+/* “Inverse” slides (big section breaks) */
+.inverse {
+  color: rgba(255, 255, 255, 0.92);
+
+  h1, h2, h3 {
+    color: #ffffff;
+  }
+
+  .slide-background-content {
+    background-color: $inverse-bg;
+  }
+
+  a {
+    color: #ffffff;
+    border-bottom-color: rgba(255, 255, 255, 0.35);
+  }
+  a:hover {
+    border-bottom-color: rgba(255, 255, 255, 0.70);
+  }
+
+  code {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+  }
+}
+
+/* Big centered statement slide */
+.big-text {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 1em 0;
+  text-align: center;
+}
+
+/* Utility emphasis classes */
+.blue  { color: $g-blue;   font-weight: 700; }
+.green { color: $g-green;  font-weight: 700; }
+.red   { color: $g-red;    font-weight: 700; }
+.yellow{ color: $g-yellow; font-weight: 700; }
+
+/* Keep your original "grey" helper but make it truly “Google UI muted” */
+.grey  { color: $g-text-muted; font-weight: 700; }
+
+/* Optional: subtle “pill” callout style you can use in slides */
+.callout {
+  background: $g-surface;
+  border: 1px solid $g-border;
+  border-left: 8px solid $g-blue;
+  border-radius: 16px;
+  padding: 0.65em 0.85em;
+}
