@@ -8,7 +8,7 @@ bibliography: paperpile.bib
 format: 
   revealjs:
     theme: [default, google.scss]
-    footer: "DSS"
+    footer: "Google"
     multiplex: false
     transition: fade
     slide-number: c
