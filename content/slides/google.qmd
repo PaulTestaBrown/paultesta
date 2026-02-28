@@ -179,7 +179,7 @@ The Personal is Political: Assessing the Effects of Personal Narratives on Publi
 ## Abortion is an "Easy Issue" {.smaller}
 
 :::::: columns
-:::: {.column width="60%"}
+::: {.column width="60%"}
 ::: nonincremental
 -   Abortion is an ["Easy Issue"]{.blue} ... in that it's not hard for people to form [strong opinions]{.blue} [@Carmines1980-aw]
 
@@ -193,7 +193,7 @@ The Personal is Political: Assessing the Effects of Personal Narratives on Publi
 
     -   Most people are ambivalent, holding a mix of pro-choice and pro-life views [@Cook2019-fd]
 :::
-::::
+:::
 
 ::: {.column width="40%"}
 ![](figures/cces_abortion_alluvial.jpeg)
@@ -828,7 +828,7 @@ Quantitative:
 
 ## Binary vs Multiple Choice PICAS
 
-:::::: panel-tabset
+:::: panel-tabset
 
 ## Motivation
 
@@ -859,19 +859,14 @@ Interviews with Dr. Paul Offit on *The Bulwark Podcast* and *CNN* edited so that
 
 ## Traditional Media
 
-<video playsinline controls width="100%">
-<source type="video/mp4" src="https://pub-313c5d1345cb4c35839c193413891742.r2.dev/cnn_1min.mp4">
-</video>
+![](https://pub-313c5d1345cb4c35839c193413891742.r2.dev/cnn_1min.mp4)
 
 ## New Media
 
-<video width="100%" controls playsinline>
+![](https://pub-313c5d1345cb4c35839c193413891742.r2.dev/bulwark_1min.mp4)
 
-<source src="https://pub-313c5d1345cb4c35839c193413891742.r2.dev/bulwark_1min.mp4" type="video/mp4">
 
-</video>
-
-::::::
+::::
 
 
 
